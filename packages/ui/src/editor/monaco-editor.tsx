@@ -1,11 +1,13 @@
 'use client';
 
-import Editor, { OnMount } from '@monaco-editor/react';
+import { type OnMount } from '@monaco-editor/react';
 import { Button } from '@shadcn/ui/button';
 import { cn } from '@shadcn/ui/lib/utils';
 import { useSize } from 'ahooks';
 import { EyeIcon, EyeOff, FullscreenIcon, MinimizeIcon } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { useRef, useState } from 'react';
+const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
 export interface MonacoEditorProps {
   value?: string;

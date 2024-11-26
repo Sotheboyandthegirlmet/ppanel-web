@@ -448,7 +448,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   max: 100,
                                   placeholder: t('form.discountPercent'),
                                   suffix: '%',
-                                  calculateValue: (data) => {
+                                  calculateValue: function (data) {
                                     const { unit_price } = form.getValues();
                                     return {
                                       ...data,
@@ -466,7 +466,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                   formatInput: (value) => unitConversion('centsToDollars', value),
                                   formatOutput: (value) => unitConversion('dollarsToCents', value),
                                   internal: true,
-                                  calculateValue: (data) => {
+                                  calculateValue: function (data) {
                                     const { unit_price } = form.getValues();
                                     return {
                                       ...data,

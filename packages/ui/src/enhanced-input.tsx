@@ -71,7 +71,10 @@ export function EnhancedInput({
   };
 
   return (
-    <div className={cn('border-input flex w-full items-center rounded-md border', className)}>
+    <div
+      className={cn('border-input flex w-full items-center rounded-md border', className)}
+      suppressHydrationWarning
+    >
       {prefix && <div className='bg-muted mr-px flex h-9 items-center px-3'>{prefix}</div>}
       <Input
         {...props}

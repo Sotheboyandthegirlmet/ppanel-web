@@ -1,6 +1,7 @@
 'use client';
 
-import Lottie, { LottieComponentProps } from 'lottie-react';
+import { type LottieComponentProps } from 'lottie-react';
+import dynamic from 'next/dynamic';
 import gift from './gift.json';
 import globalMap from './global-map.json';
 import loading from './loading.json';
@@ -12,6 +13,7 @@ import rocket from './rocket.json';
 import servers from './servers.json';
 import sun from './sun.json';
 import users from './users.json';
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
 export function RocketLoadingIcon(props: Omit<LottieComponentProps, 'animationData'>) {
   return <Lottie {...props} loop animationData={rocket} />;
