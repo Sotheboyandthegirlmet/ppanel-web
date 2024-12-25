@@ -1,6 +1,6 @@
 {
-  "entry": "./locales/zh-CN",
-  "entryLocale": "zh-CN",
+  "entry": "./locales/en-US",
+  "entryLocale": "en-US",
   "experimental": {
     "jsonMode": true
   },
@@ -9,7 +9,31 @@
     "entryLocale": "en-US",
     "outputLocales": ["zh-CN"]
   },
-  "modelName": "gpt-3.5-turbo",
+  "modelName": "gpt-4o",
   "output": "./locales",
-  "outputLocales": ["en-US", "zh-CN"]
+  "outputLocales": [
+    "en-US",
+    "cs-CZ",
+    "de-DE",
+    "es-ES",
+    "es-MX",
+    "fa-IR",
+    "fi-FI",
+    "fr-FR",
+    "hi-IN",
+    "hu-HU",
+    "ja-JP",
+    "ko-KR",
+    "no-NO",
+    "pl-PL",
+    "pt-BR",
+    "ro-RO",
+    "ru-RU",
+    "th-TH",
+    "tr-TR",
+    "uk-UA",
+    "vi-VN",
+    "zh-CN",
+    "zh-HK"
+  ]
 }

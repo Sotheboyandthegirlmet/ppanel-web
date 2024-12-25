@@ -9,7 +9,6 @@ import { z, zodResolver } from '@shadcn/ui/lib/zod';
 import { useCountDown } from 'ahooks';
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction, useState } from 'react';
-
 import CloudFlareTurnstile from './turnstile';
 
 export default function UserResetForm({
@@ -49,7 +48,10 @@ export default function UserResetForm({
     email: z.string(),
     password: z.string(),
     code: register.enable_email_verify ? z.string() : z.string().nullish(),
-    cf_token: verify.enable_register_verify ? z.string() : z.string().nullish(),
+    cf_token:
+      verify.enable_register_verify && verify.turnstile_site_key
+        ? z.string()
+        : z.string().nullish(),
   });
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

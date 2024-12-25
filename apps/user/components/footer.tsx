@@ -19,7 +19,7 @@ import { Fragment } from 'react';
 const Links = [
   {
     icon: 'uil:envelope',
-    href: NEXT_PUBLIC_EMAIL ?? `mailto:${NEXT_PUBLIC_EMAIL}`,
+    href: NEXT_PUBLIC_EMAIL ? `mailto:${NEXT_PUBLIC_EMAIL}` : undefined,
   },
   {
     icon: 'uil:telegram',

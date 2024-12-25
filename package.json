@@ -40,12 +40,13 @@
   "devDependencies": {
     "@repo/commitlint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "@umijs/openapi": "^1.13.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.2.10",
+    "lint-staged": "^15.2.11",
     "semantic-release": "^24.2.0",
     "semantic-release-config-gitmoji": "^1.5.3",
-    "turbo": "^2.3.2",
+    "turbo": "^2.3.3",
     "typescript": "^5.7.2"
   },
   "packageManager": "pnpm@9.12.3",
@@ -54,7 +55,7 @@
   },
   "pnpm": {
     "overrides": {
-      "react-is": "rc"
+      "react-is": "19.0.0"
     }
   }
 }

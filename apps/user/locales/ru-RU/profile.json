@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Настройки аккаунта",
+    "loginPassword": "Пароль для входа",
+    "newPassword": "Новый пароль",
+    "passwordMismatch": "Пароли не совпадают",
+    "repeatNewPassword": "Повторите новый пароль",
+    "updatePassword": "Обновить пароль",
+    "updateSuccess": "Успешно обновлено"
+  },
+  "notify": {
+    "bind": "Перейти к привязке",
+    "emailNotification": "Уведомление по электронной почте",
+    "notificationSettings": "Настройки уведомлений",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "Введите Telegram ID",
+    "telegramNotification": "Уведомление в Telegram",
+    "unbind": "Отвязать",
+    "updateSuccess": "Успешно обновлено"
+  },
+  "notifyEvent": {
+    "balanceChange": "Изменение баланса",
+    "finance": "Финансы",
+    "login": "Вход",
+    "notificationEvents": "События уведомлений",
+    "subscribe": "Подписка",
+    "updateSuccess": "Успешное обновление"
+  }
+}

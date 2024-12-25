@@ -4,7 +4,7 @@ import request from '@/utils/request';
 
 /** Get application GET /v1/admin/system/application */
 export async function getApplication(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetApplicationResponse }>(
+  return request<API.Response & { data?: API.ApplicationResponse }>(
     '/v1/admin/system/application',
     {
       method: 'GET',
@@ -60,18 +60,15 @@ export async function deleteApplication(
 
 /** Get Currency Config GET /v1/admin/system/currency_config */
 export async function getCurrencyConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetCurrencyConfigResponse }>(
-    '/v1/admin/system/currency_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.CurrencyConfig }>('/v1/admin/system/currency_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update Currency Config PUT /v1/admin/system/currency_config */
 export async function updateCurrencyConfig(
-  body: API.UpdateCurrencyConfigRequest,
+  body: API.CurrencyConfig,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/currency_config', {
@@ -86,18 +83,15 @@ export async function updateCurrencyConfig(
 
 /** Get email smtp config GET /v1/admin/system/email_config */
 export async function getEmailSmtpConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetEmailSmtpConfigResponse }>(
-    '/v1/admin/system/email_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.EmailSmtpConfig }>('/v1/admin/system/email_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update email smtp config PUT /v1/admin/system/email_config */
 export async function updateEmailSmtpConfig(
-  body: API.UpdateEmailSmtpConfigRequest,
+  body: API.EmailSmtpConfig,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/email_config', {
@@ -112,20 +106,14 @@ export async function updateEmailSmtpConfig(
 
 /** Get invite config GET /v1/admin/system/invite_config */
 export async function getInviteConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetInviteConfigResponse }>(
-    '/v1/admin/system/invite_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.InviteConfig }>('/v1/admin/system/invite_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update invite config PUT /v1/admin/system/invite_config */
-export async function updateInviteConfig(
-  body: API.UpdateInviteConfigRequest,
-  options?: { [key: string]: any },
-) {
+export async function updateInviteConfig(body: API.InviteConfig, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/system/invite_config', {
     method: 'PUT',
     headers: {
@@ -138,20 +126,14 @@ export async function updateInviteConfig(
 
 /** Get node config GET /v1/admin/system/node_config */
 export async function getNodeConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetNodeConfigResponse }>(
-    '/v1/admin/system/node_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.NodeConfig }>('/v1/admin/system/node_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update node config PUT /v1/admin/system/node_config */
-export async function updateNodeConfig(
-  body: API.UpdateNodeConfigRequest,
-  options?: { [key: string]: any },
-) {
+export async function updateNodeConfig(body: API.NodeConfig, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/system/node_config', {
     method: 'PUT',
     headers: {
@@ -164,18 +146,15 @@ export async function updateNodeConfig(
 
 /** Get register config GET /v1/admin/system/register_config */
 export async function getRegisterConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetRegisterConfigResponse }>(
-    '/v1/admin/system/register_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.RegisterConfig }>('/v1/admin/system/register_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update register config PUT /v1/admin/system/register_config */
 export async function updateRegisterConfig(
-  body: API.UpdateRegisterConfigRequest,
+  body: API.RegisterConfig,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/register_config', {
@@ -188,22 +167,24 @@ export async function updateRegisterConfig(
   });
 }
 
+/** setting telegram bot POST /v1/admin/system/setting_telegram_bot */
+export async function settingTelegramBot(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/system/setting_telegram_bot', {
+    method: 'POST',
+    ...(options || {}),
+  });
+}
+
 /** Get site config GET /v1/admin/system/site_config */
 export async function getSiteConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetSiteConfigResponse }>(
-    '/v1/admin/system/site_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.SiteConfig }>('/v1/admin/system/site_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update site config PUT /v1/admin/system/site_config */
-export async function updateSiteConfig(
-  body: API.UpdateSiteConfigRequest,
-  options?: { [key: string]: any },
-) {
+export async function updateSiteConfig(body: API.SiteConfig, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/system/site_config', {
     method: 'PUT',
     headers: {
@@ -216,7 +197,7 @@ export async function updateSiteConfig(
 
 /** Get subscribe config GET /v1/admin/system/subscribe_config */
 export async function getSubscribeConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetSubscribeConfigResponse }>(
+  return request<API.Response & { data?: API.SubscribeConfig }>(
     '/v1/admin/system/subscribe_config',
     {
       method: 'GET',
@@ -227,7 +208,7 @@ export async function getSubscribeConfig(options?: { [key: string]: any }) {
 
 /** Update subscribe config PUT /v1/admin/system/subscribe_config */
 export async function updateSubscribeConfig(
-  body: API.UpdateSubscribeConfigRequest,
+  body: API.SubscribeConfig,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/subscribe_config', {
@@ -242,29 +223,23 @@ export async function updateSubscribeConfig(
 
 /** Get subscribe type GET /v1/admin/system/subscribe_type */
 export async function getSubscribeType(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetSubscribeTypeResponse }>(
-    '/v1/admin/system/subscribe_type',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.SubscribeType }>('/v1/admin/system/subscribe_type', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Get Telegram Config GET /v1/admin/system/telegram_config */
 export async function getTelegramConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetTelegramConfigResponse }>(
-    '/v1/admin/system/telegram_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.TelegramConfig }>('/v1/admin/system/telegram_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update Telegram Config PUT /v1/admin/system/telegram_config */
 export async function updateTelegramConfig(
-  body: API.UpdateTelegramConfigRequest,
+  body: API.TelegramConfig,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/system/telegram_config', {
@@ -294,20 +269,14 @@ export async function testEmailSmtp(
 
 /** Get Team of Service Config GET /v1/admin/system/tos_config */
 export async function getTosConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetTosConfigResponse }>(
-    '/v1/admin/system/tos_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.TosConfig }>('/v1/admin/system/tos_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update Team of Service Config PUT /v1/admin/system/tos_config */
-export async function updateTosConfig(
-  body: API.UpdateTosConfigRequest,
-  options?: { [key: string]: any },
-) {
+export async function updateTosConfig(body: API.TosConfig, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/system/tos_config', {
     method: 'PUT',
     headers: {
@@ -320,20 +289,14 @@ export async function updateTosConfig(
 
 /** Get verify config GET /v1/admin/system/verify_config */
 export async function getVerifyConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.GetVerifyConfigResponse }>(
-    '/v1/admin/system/verify_config',
-    {
-      method: 'GET',
-      ...(options || {}),
-    },
-  );
+  return request<API.Response & { data?: API.VerifyConfig }>('/v1/admin/system/verify_config', {
+    method: 'GET',
+    ...(options || {}),
+  });
 }
 
 /** Update verify config PUT /v1/admin/system/verify_config */
-export async function updateVerifyConfig(
-  body: API.UpdateVerifyConfigRequest,
-  options?: { [key: string]: any },
-) {
+export async function updateVerifyConfig(body: API.VerifyConfig, options?: { [key: string]: any }) {
   return request<API.Response & { data?: any }>('/v1/admin/system/verify_config', {
     method: 'PUT',
     headers: {

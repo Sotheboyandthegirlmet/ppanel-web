@@ -35,7 +35,7 @@ export async function queryOrderDetail(
   params: API.QueryOrderDetailParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: API.OrderDetails }>('/v1/public/order/detail', {
+  return request<API.Response & { data?: API.OrderDetail }>('/v1/public/order/detail', {
     method: 'GET',
     params: {
       ...params,

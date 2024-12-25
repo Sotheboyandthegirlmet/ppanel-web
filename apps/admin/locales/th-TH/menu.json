@@ -1,0 +1,18 @@
+{
+  "Announcement Management": "การจัดการประกาศ",
+  "Coupon Management": "การจัดการคูปอง",
+  "Dashboard": "แดชบอร์ด",
+  "Document Management": "การจัดการเอกสาร",
+  "Finance": "การเงิน",
+  "Order Management": "การจัดการคำสั่งซื้อ",
+  "Payment Config": "การตั้งค่าการชำระเงิน",
+  "Server": "เซิร์ฟเวอร์",
+  "Server Management": "การจัดการเซิร์ฟเวอร์",
+  "Settings": "การตั้งค่า",
+  "Subscribe Management": "การจัดการการสมัครสมาชิก",
+  "System Config": "การกำหนดค่าระบบ",
+  "System Tool": "เครื่องมือระบบ",
+  "Ticket Management": "การจัดการตั๋ว",
+  "User": "ผู้ใช้",
+  "User Management": "การจัดการผู้ใช้"
+}

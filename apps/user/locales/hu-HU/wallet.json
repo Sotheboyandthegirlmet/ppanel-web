@@ -1,0 +1,15 @@
+{
+  "amount": "Összeg",
+  "balance": "Egyenleg",
+  "createdAt": "idő",
+  "title": "Számlaegyenleg",
+  "type": {
+    "0": "Típus",
+    "1": "Feltöltés",
+    "2": "Kivétel",
+    "3": "Vásárlás",
+    "4": "Visszatérítés",
+    "5": "Jutalom",
+    "6": "Jutalék"
+  }
+}

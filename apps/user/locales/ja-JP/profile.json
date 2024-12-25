@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "アカウント設定",
+    "loginPassword": "ログインパスワード",
+    "newPassword": "新しいパスワード",
+    "passwordMismatch": "パスワードが一致しません",
+    "repeatNewPassword": "新しいパスワードを再入力",
+    "updatePassword": "パスワードを更新",
+    "updateSuccess": "更新成功"
+  },
+  "notify": {
+    "bind": "バインディングに移動",
+    "emailNotification": "メール通知",
+    "notificationSettings": "通知設定",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "Telegram IDを入力",
+    "telegramNotification": "Telegram通知",
+    "unbind": "バインド解除",
+    "updateSuccess": "更新成功"
+  },
+  "notifyEvent": {
+    "balanceChange": "残高の変動",
+    "finance": "財務",
+    "login": "ログイン",
+    "notificationEvents": "通知イベント",
+    "subscribe": "購読",
+    "updateSuccess": "更新成功"
+  }
+}

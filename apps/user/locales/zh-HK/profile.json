@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "帳戶設定",
+    "loginPassword": "登入密碼",
+    "newPassword": "新密碼",
+    "passwordMismatch": "兩次密碼輸入不一致",
+    "repeatNewPassword": "重複新密碼",
+    "updatePassword": "更新密碼",
+    "updateSuccess": "更新成功"
+  },
+  "notify": {
+    "bind": "前往綁定",
+    "emailNotification": "郵件通知",
+    "notificationSettings": "通知設定",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "輸入 Telegram ID",
+    "telegramNotification": "Telegram 通知",
+    "unbind": "解除綁定",
+    "updateSuccess": "更新成功"
+  },
+  "notifyEvent": {
+    "balanceChange": "餘額變動",
+    "finance": "財務",
+    "login": "登入",
+    "notificationEvents": "通知事件",
+    "subscribe": "訂閱",
+    "updateSuccess": "更新成功"
+  }
+}

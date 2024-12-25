@@ -8,7 +8,7 @@ export async function queryDocumentDetail(
   params: API.QueryDocumentDetailParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: API.DocumentDetail }>('/v1/public/document/detail', {
+  return request<API.Response & { data?: API.Document }>('/v1/public/document/detail', {
     method: 'GET',
     params: {
       ...params,

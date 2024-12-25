@@ -1,11 +1,15 @@
 {
+  "Day": "Day",
+  "Hour": "Hour",
+  "Minute": "Minute",
+  "Month": "Month",
+  "Year": "Year",
   "all": "All",
   "billing": {
     "billingTitle": "Product Billing",
     "couponDiscount": "Coupon Discount",
     "duration": "Duration",
     "fee": "Fee",
-    "months": "months",
     "price": "Price",
     "productDiscount": "Product Discount",
     "total": "Total"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe (Alipay)",
     "stripe_wechat_pay": "Stripe (WeChat)"
   },
-  "perMonth": "Per Month",
   "productDescription": "Product Description",
   "products": "Products"
 }

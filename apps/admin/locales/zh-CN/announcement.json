@@ -13,7 +13,7 @@
   "deleteSuccess": "删除成功",
   "edit": "编辑",
   "editAnnouncement": "编辑公告",
-  "enable": "启用",
+  "enable": "是否显示",
   "form": {
     "cancel": "取消",
     "confirm": "确认",
@@ -23,6 +23,8 @@
     "titlePlaceholder": "请输入"
   },
   "hide": "隐藏",
+  "pinned": "置顶",
+  "popup": "弹窗",
   "show": "显示",
   "title": "标题",
   "updateSuccess": "更新成功",

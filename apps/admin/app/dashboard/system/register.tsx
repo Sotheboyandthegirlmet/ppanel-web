@@ -28,7 +28,7 @@ export default function Register() {
       await updateRegisterConfig({
         ...data,
         [key]: value,
-      } as API.GetRegisterConfigResponse);
+      } as API.RegisterConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

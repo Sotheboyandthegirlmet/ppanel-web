@@ -21,15 +21,7 @@ import { useEffect, useState, useTransition } from 'react';
 import { SubscribeBilling } from '../subscribe/billing';
 import { SubscribeDetail } from '../subscribe/detail';
 
-export default function Renewal({
-  mark,
-  subscribe,
-}: {
-  mark: string;
-  subscribe: Omit<API.SubscribeDetails, 'discount'> & {
-    discount: string | API.UserSubscribeDiscount[];
-  };
-}) {
+export default function Renewal({ token, subscribe }: { token: string; subscribe: API.Subscribe }) {
   const t = useTranslations('order');
   const { getUserInfo } = useGlobalStore();
   const [open, setOpen] = useState<boolean>(false);
@@ -39,7 +31,7 @@ export default function Renewal({
     subscribe_id: subscribe.id,
     payment: 'balance',
     coupon: '',
-    subscribe_mark: mark,
+    subscribe_token: token,
   });
   const [loading, startTransition] = useTransition();
 
@@ -52,7 +44,7 @@ export default function Renewal({
       });
       return data.data;
     },
-    enabled: !!subscribe.id,
+    enabled: !!subscribe.id && open,
   });
 
   const { data: paymentMethods } = useQuery({
@@ -64,26 +56,16 @@ export default function Renewal({
   });
 
   useEffect(() => {
-    if (subscribe.id && mark) {
+    if (subscribe.id && token) {
       setParams((prev) => ({
         ...prev,
         quantity: 1,
         subscribe_id: subscribe.id,
-        subscribe_mark: mark,
+        subscribe_token: token,
       }));
     }
-  }, [subscribe.id, mark]);
+  }, [subscribe.id, token]);
 
-  function getDiscount() {
-    try {
-      if (typeof subscribe.discount === 'string') {
-        return JSON.parse(subscribe?.discount) as API.UserSubscribeDiscount[];
-      }
-      return subscribe?.discount;
-    } catch (error) {
-      return [];
-    }
-  }
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
@@ -125,27 +107,29 @@ export default function Renewal({
                 }}
                 className='flex flex-wrap gap-2'
               >
-                <div className='relative'>
-                  <RadioGroupItem value='1' id='1' className='peer sr-only' />
-                  <Label
-                    htmlFor='1'
-                    className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
-                  >
-                    1 {t('month')}
-                  </Label>
-                </div>
-                {getDiscount().map((item) => (
-                  <div key={item.months}>
+                {subscribe?.unit_time !== 'Minute' && (
+                  <div className='relative'>
+                    <RadioGroupItem value='1' id='1' className='peer sr-only' />
+                    <Label
+                      htmlFor='1'
+                      className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
+                    >
+                      1 / {t(subscribe?.unit_time || 'Month')}
+                    </Label>
+                  </div>
+                )}
+                {subscribe?.discount?.map((item) => (
+                  <div key={item.quantity}>
                     <RadioGroupItem
-                      value={String(item.months)}
-                      id={String(item.months)}
+                      value={String(item.quantity)}
+                      id={String(item.quantity)}
                       className='peer sr-only'
                     />
                     <Label
-                      htmlFor={String(item.months)}
+                      htmlFor={String(item.quantity)}
                       className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
                     >
-                      {item.months} {t('months')}
+                      {item.quantity} / {t(subscribe?.unit_time || 'Month')}
                       {item.discount < 100 && (
                         <Badge variant='destructive'>-{100 - item.discount}%</Badge>
                       )}

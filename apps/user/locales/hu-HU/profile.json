@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Fiókbeállítások",
+    "loginPassword": "Bejelentkezési jelszó",
+    "newPassword": "Új jelszó",
+    "passwordMismatch": "A két jelszó nem egyezik",
+    "repeatNewPassword": "Új jelszó ismétlése",
+    "updatePassword": "Jelszó frissítése",
+    "updateSuccess": "Sikeres frissítés"
+  },
+  "notify": {
+    "bind": "Menj a kötéshez",
+    "emailNotification": "E-mail értesítés",
+    "notificationSettings": "Értesítési beállítások",
+    "telegramId": "Telegram azonosító",
+    "telegramIdPlaceholder": "Adja meg a Telegram azonosítót",
+    "telegramNotification": "Telegram értesítés",
+    "unbind": "Kötés feloldása",
+    "updateSuccess": "Sikeres frissítés"
+  },
+  "notifyEvent": {
+    "balanceChange": "Egyenlegváltozás",
+    "finance": "Pénzügy",
+    "login": "Bejelentkezés",
+    "notificationEvents": "Értesítési események",
+    "subscribe": "Feliratkozás",
+    "updateSuccess": "Sikeres frissítés"
+  }
+}

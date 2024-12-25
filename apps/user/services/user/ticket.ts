@@ -38,7 +38,7 @@ export async function getUserTicketDetails(
   params: API.GetUserTicketDetailsParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.Response & { data?: API.UserTicket }>('/v1/public/ticket/detail', {
+  return request<API.Response & { data?: API.Ticket }>('/v1/public/ticket/detail', {
     method: 'GET',
     params: {
       ...params,

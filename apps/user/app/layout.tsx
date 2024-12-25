@@ -7,12 +7,15 @@ import { Toaster } from '@shadcn/ui/sonner';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import { PublicEnvScript } from 'next-runtime-env';
+import { unstable_noStore as noStore } from 'next/cache';
 import { cookies } from 'next/headers';
 import { Metadata, Viewport } from 'next/types';
 import NextTopLoader from 'nextjs-toploader';
 import React from 'react';
+import rtlDetect from 'rtl-detect';
 
 export async function generateMetadata(): Promise<Metadata> {
+  noStore();
   let site: API.SiteConfig | undefined;
 
   await getGlobalConfig({ skipErrorHandler: true })
@@ -78,7 +81,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   }
 
   return (
-    <html suppressHydrationWarning lang={locale}>
+    <html suppressHydrationWarning lang={locale} dir={rtlDetect.getLangDir(locale)}>
       <head>
         <PublicEnvScript />
       </head>

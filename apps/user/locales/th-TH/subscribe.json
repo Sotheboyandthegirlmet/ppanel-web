@@ -1,0 +1,34 @@
+{
+  "Day": "วัน",
+  "Hour": "ชั่วโมง",
+  "Minute": "นาที",
+  "Month": "เดือน",
+  "Year": "ปี",
+  "all": "ทั้งหมด",
+  "billing": {
+    "billingTitle": "ใบแจ้งหนี้สินค้า",
+    "couponDiscount": "ส่วนลดคูปอง",
+    "duration": "ระยะเวลาแพ็กเกจ",
+    "fee": "ค่าธรรมเนียม",
+    "price": "ราคา",
+    "productDiscount": "ส่วนลดสินค้า",
+    "total": "ราคารวม"
+  },
+  "buy": "ซื้อ",
+  "category": "หมวดหมู่",
+  "detail": {
+    "availableTraffic": "ปริมาณข้อมูลที่ใช้ได้",
+    "connectedDevices": "จำนวนอุปกรณ์ที่เชื่อมต่อพร้อมกัน",
+    "connectionSpeed": "ความเร็วในการเชื่อมต่อ",
+    "productDetail": "รายละเอียดสินค้า"
+  },
+  "methods": {
+    "alipay_f2f": "อาลีเพย์ (เผชิญหน้า)",
+    "balance": "ยอดคงเหลือ",
+    "epay": "อีเพย์",
+    "stripe_alipay": "Stripe (อาลีเพย์)",
+    "stripe_wechat_pay": "Stripe (วีแชท)"
+  },
+  "productDescription": "รายละเอียดสินค้า",
+  "products": "สินค้า"
+}

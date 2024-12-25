@@ -26,13 +26,20 @@ export const useGlobalStore = create<GlobalStore>((set) => ({
       enable_email_verify: false,
       enable_email_domain_suffix: false,
       email_domain_suffix_list: '',
+      enable_trial: false,
+      enable_ip_register_limit: false,
+      ip_register_limit: 0,
+      ip_register_limit_duration: 0,
     },
     invite: {
       forced_invite: false,
+      referral_percentage: 0,
+      only_first_purchase: false,
     },
     currency: {
       currency_unit: 'USD',
       currency_symbol: '$',
+      access_key: '',
     },
     subscribe: {
       single_model: false,

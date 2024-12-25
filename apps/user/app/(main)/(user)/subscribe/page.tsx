@@ -12,12 +12,13 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
+import { Empty } from '@/components/empty';
 import Purchase from '../order/purchase';
 import { SubscribeDetail } from './detail';
 
 export default function Page() {
   const t = useTranslations('subscribe');
-  const [subscribe, setSubscribe] = useState<API.SubscribeDetails>();
+  const [subscribe, setSubscribe] = useState<API.Subscribe>();
 
   const [group, setGroup] = useState<string>('');
 
@@ -81,7 +82,6 @@ export default function Page() {
                                 icon: string;
                                 label: string;
                                 type: 'default' | 'success' | 'destructive';
-                                support: boolean;
                               },
                               index: number,
                             ) => (
@@ -120,7 +120,7 @@ export default function Page() {
                 <CardFooter className='relative mt-2 flex flex-col gap-2'>
                   <h2 className='pb-5 text-2xl font-semibold sm:text-3xl'>
                     <Display type='currency' value={item.unit_price} />
-                    <span className='text-base font-medium'>/{t('perMonth')}</span>
+                    <span className='text-base font-medium'>/{t(item.unit_time || 'Month')}</span>
                   </h2>
                   <Button
                     className='absolute bottom-0 w-full rounded-b-xl rounded-t-none'
@@ -134,6 +134,7 @@ export default function Page() {
               </Card>
             ))}
         </div>
+        {data?.length === 0 && <Empty />}
       </Tabs>
       <Purchase subscribe={subscribe} setSubscribe={setSubscribe} />
     </>

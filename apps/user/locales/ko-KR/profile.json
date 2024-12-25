@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "계정 설정",
+    "loginPassword": "로그인 비밀번호",
+    "newPassword": "새 비밀번호",
+    "passwordMismatch": "비밀번호가 일치하지 않습니다",
+    "repeatNewPassword": "새 비밀번호 반복",
+    "updatePassword": "비밀번호 업데이트",
+    "updateSuccess": "업데이트 성공"
+  },
+  "notify": {
+    "bind": "바인딩으로 이동",
+    "emailNotification": "이메일 알림",
+    "notificationSettings": "알림 설정",
+    "telegramId": "텔레그램 ID",
+    "telegramIdPlaceholder": "텔레그램 ID 입력",
+    "telegramNotification": "텔레그램 알림",
+    "unbind": "바인딩 해제",
+    "updateSuccess": "업데이트 성공"
+  },
+  "notifyEvent": {
+    "balanceChange": "잔액 변경",
+    "finance": "재무",
+    "login": "로그인",
+    "notificationEvents": "알림 이벤트",
+    "subscribe": "구독",
+    "updateSuccess": "업데이트 성공"
+  }
+}

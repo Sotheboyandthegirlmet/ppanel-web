@@ -1,11 +1,13 @@
 'use client';
+
 import { ProTable as _ProTable, ProTableProps } from '@repo/ui/pro-table';
 import { useTranslations } from 'next-intl';
-
 export { type ProTableActions } from '@repo/ui/pro-table';
-export function ProTable<TData, TValue extends Record<string, unknown>>(
-  props: ProTableProps<TData, TValue>,
-) {
+
+export function ProTable<
+  TData extends Record<string, unknown>,
+  TValue extends Record<string, unknown>,
+>(props: ProTableProps<TData, TValue>) {
   const t = useTranslations('common.table');
   return (
     <_ProTable

@@ -32,7 +32,6 @@ import {
 } from '@shadcn/ui/sheet';
 import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 import { assign, shake } from 'radash';
 import { useEffect, useState } from 'react';
 
@@ -53,6 +52,7 @@ const defaultValues = {
   discount: [],
   server_group: [],
   server: [],
+  unit_time: 'Month',
 };
 
 export default function SubscribeForm<T extends Record<string, any>>({
@@ -63,7 +63,6 @@ export default function SubscribeForm<T extends Record<string, any>>({
   title,
 }: SubscribeFormProps<T>) {
   const t = useTranslations('subscribe');
-  const { resolvedTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -71,11 +70,12 @@ export default function SubscribeForm<T extends Record<string, any>>({
     name: z.string(),
     description: z.string().optional(),
     unit_price: z.number(),
+    unit_time: z.string().default('Month'),
     replacement: z.number().optional(),
     discount: z
       .array(
         z.object({
-          months: z.number(),
+          quantity: z.number(),
           discount: z.number(),
         }),
       )
@@ -135,6 +135,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
     },
   });
 
+  const unit_time = form.watch('unit_time');
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -255,7 +256,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                     name='unit_price'
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>{t('form.unit_price')}</FormLabel>
+                        <FormLabel>{t('form.unitPrice')}</FormLabel>
                         <FormControl>
                           <EnhancedInput
                             type='number'
@@ -266,6 +267,34 @@ export default function SubscribeForm<T extends Record<string, any>>({
                             onValueChange={(value) => {
                               form.setValue(field.name, value);
                             }}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name='unit_time'
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>{t('form.unitTime')}</FormLabel>
+                        <FormControl>
+                          <Combobox
+                            placeholder={t('form.selectUnitTime')}
+                            {...field}
+                            onChange={(value) => {
+                              if (value) {
+                                form.setValue(field.name, value);
+                              }
+                            }}
+                            options={[
+                              { label: t('form.Year'), value: 'Year' },
+                              { label: t('form.Month'), value: 'Month' },
+                              { label: t('form.Day'), value: 'Day' },
+                              { label: t('form.Hour'), value: 'Hour' },
+                              { label: t('form.Minute'), value: 'Minute' },
+                            ]}
                           />
                         </FormControl>
                         <FormMessage />
@@ -436,10 +465,10 @@ export default function SubscribeForm<T extends Record<string, any>>({
                             <ArrayInput<API.SubscribeDiscount>
                               fields={[
                                 {
-                                  name: 'months',
+                                  name: 'quantity',
                                   type: 'number',
                                   min: 1,
-                                  suffix: t('form.discountMonths'),
+                                  suffix: unit_time && t(`form.${unit_time}`),
                                 },
                                 {
                                   name: 'discount',
@@ -453,7 +482,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                     return {
                                       ...data,
                                       price: evaluateWithPrecision(
-                                        `${unit_price} * ${data.months} * ${data.discount} / 100`,
+                                        `${unit_price} * ${data.quantity} * ${data.discount} / 100`,
                                       ),
                                     };
                                   },
@@ -471,7 +500,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                     return {
                                       ...data,
                                       discount: evaluateWithPrecision(
-                                        `${data.price} / ${data.months} / ${unit_price} * 100`,
+                                        `${data.price} / ${data.quantity} / ${unit_price} * 100`,
                                       ),
                                     };
                                   },
@@ -524,7 +553,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                                 <AccordionContent>
                                   <ul className='list-disc [&>li]:mt-2'>
                                     {server
-                                      ?.filter((server: API.Server) => server.groupId === group.id)
+                                      ?.filter((server: API.Server) => server.group_id === group.id)
                                       ?.map((node: API.Server) => {
                                         return (
                                           <li
@@ -557,7 +586,7 @@ export default function SubscribeForm<T extends Record<string, any>>({
                       <FormControl>
                         <div className='flex flex-col gap-2'>
                           {server
-                            ?.filter((item: API.Server) => !item.groupId)
+                            ?.filter((item: API.Server) => !item.group_id)
                             ?.map((item: API.Server) => {
                               const value = field.value || [];
 

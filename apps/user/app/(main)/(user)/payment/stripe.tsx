@@ -96,8 +96,8 @@ const CheckoutForm: React.FC<Omit<StripePaymentProps, 'publishable_key'>> = ({
       size={208}
       imageSettings={{
         src: `/payment/${method}.svg`,
-        width: 48,
-        height: 48,
+        width: 24,
+        height: 24,
         excavate: true,
       }}
     />

@@ -21,7 +21,7 @@ export default function Page() {
   const t = useTranslations('document');
   const [loading, setLoading] = useState(false);
 
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
   return (
     <ProTable<API.Document, { tag: string; search: string }>
       action={ref}

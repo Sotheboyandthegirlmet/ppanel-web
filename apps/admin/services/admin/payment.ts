@@ -12,7 +12,7 @@ export async function getAlipayF2FPaymentConfig(options?: { [key: string]: any }
 
 /** Update alipay f2f payment config PUT /v1/admin/payment/alipay_f2f */
 export async function updateAlipayF2FPaymentConfig(
-  body: API.PaymentConfig,
+  body: API.UpdateAlipayF2fRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/payment/alipay_f2f', {
@@ -46,7 +46,7 @@ export async function getEpayPaymentConfig(options?: { [key: string]: any }) {
 
 /** Update epay payment config PUT /v1/admin/payment/epay */
 export async function updateEpayPaymentConfig(
-  body: API.PaymentConfig,
+  body: API.UpdateEpayRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/payment/epay', {
@@ -69,7 +69,7 @@ export async function getStripeAlipayPaymentConfig(options?: { [key: string]: an
 
 /** Update stripe alipay payment config PUT /v1/admin/payment/stripe_alipay */
 export async function updateStripeAlipayPaymentConfig(
-  body: API.PaymentConfig,
+  body: API.UpdateStripeRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/payment/stripe_alipay', {
@@ -95,7 +95,7 @@ export async function getStripeWeChatPayPaymentConfig(options?: { [key: string]:
 
 /** Update stripe wechat pay payment config PUT /v1/admin/payment/stripe_wechat_pay */
 export async function updateStripeWeChatPayPaymentConfig(
-  body: API.PaymentConfig,
+  body: API.UpdateStripeRequest,
   options?: { [key: string]: any },
 ) {
   return request<API.Response & { data?: any }>('/v1/admin/payment/stripe_wechat_pay', {

@@ -1,0 +1,15 @@
+{
+  "amount": "Montant",
+  "balance": "Solde",
+  "createdAt": "temps",
+  "title": "Solde du compte",
+  "type": {
+    "0": "Type",
+    "1": "Recharge",
+    "2": "Retrait",
+    "3": "Achat",
+    "4": "Remboursement",
+    "5": "Récompense",
+    "6": "Commission"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "Day": "День",
+  "Hour": "Година",
+  "Minute": "хвилина",
+  "Month": "Місяць",
+  "Year": "Рік",
+  "all": "всі",
+  "billing": {
+    "billingTitle": "Рахунок за товар",
+    "couponDiscount": "Знижка за промокодом",
+    "duration": "Тривалість пакету",
+    "fee": "Комісія",
+    "price": "Ціна",
+    "productDiscount": "Знижка на товар",
+    "total": "Загальна сума"
+  },
+  "buy": "Купити",
+  "category": "категорія",
+  "detail": {
+    "availableTraffic": "Доступний трафік",
+    "connectedDevices": "Кількість одночасно підключених IP",
+    "connectionSpeed": "Швидкість з'єднання",
+    "productDetail": "Деталі товару"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (обличчям до обличчя)",
+    "balance": "Баланс",
+    "epay": "Epay",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "productDescription": "Опис товару",
+  "products": "товари"
+}

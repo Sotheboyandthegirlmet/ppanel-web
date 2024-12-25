@@ -1,0 +1,44 @@
+{
+  "aliPay": "Plată cu Alipay",
+  "alipayf2f": {
+    "appId": "ID aplicație Alipay",
+    "invoiceName": "Nume personalizat produs",
+    "invoiceNameDescription": "Va apărea în factura Alipay",
+    "privateKey": "Cheie privată Alipay",
+    "publicKey": "Cheie publică Alipay",
+    "sandbox": "Modul sandbox",
+    "sandboxDescription": "Activează modul sandbox pentru a testa plățile"
+  },
+  "enable": "Activare",
+  "enableDescription": "Activează această metodă de plată",
+  "epay": {
+    "key": "CHEIE",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Mod de taxare",
+  "feeModeDescription": "Modul de taxare a comisioanelor suplimentare",
+  "feeModeItems": ["Fără comision", "Procentaj", "Sumă fixă", "Ambele"],
+  "feePercent": "Taxă procentuală (opțional)",
+  "feePercentDescription": "Se adaugă o taxă peste suma comenzii",
+  "fixedFee": "Taxă fixă (opțional)",
+  "fixedFeeDescription": "Adăugarea unei taxe fixe peste suma comenzii",
+  "iconUrl": "URL pictogramă (opțional)",
+  "iconUrlDescription": "Utilizat pentru afișarea în front-end",
+  "inputPlaceholder": "Introduceți",
+  "key": "CHEIE",
+  "notifyUrl": "Domeniu de notificare personalizat (opțional)",
+  "notifyUrlDescription": "Notificările de la gateway vor fi trimise la acest domeniu",
+  "payForRecommendations": "Plătește pentru recomandări",
+  "pid": "PID",
+  "saveSuccess": "Salvare reușită",
+  "showName": "Afișează Numele",
+  "showNameDescription": "Utilizat pentru afișarea în interfața utilizatorului",
+  "stripe": {
+    "publicKey": "CHEIE PUBLICĂ",
+    "secretKey": "CHEIE SECRETĂ",
+    "webhookSecret": "SEMNĂTURA CHEII WEBHOOK"
+  },
+  "url": "URL",
+  "wechatPay": "Plată WeChat"
+}

@@ -8,6 +8,7 @@ import {
   deleteNode,
   getNodeGroupList,
   getNodeList,
+  nodeSort,
   updateNode,
 } from '@/services/admin/server';
 import { ConfirmButton } from '@repo/ui/confirm-button';
@@ -21,6 +22,7 @@ import { useQuery } from '@tanstack/react-query';
 import { useTranslations } from 'next-intl';
 import { useRef, useState } from 'react';
 import NodeForm from './node-form';
+import { NodeStatusCell } from './node-status';
 
 export default function NodeTable() {
   const t = useTranslations('server.node');
@@ -35,7 +37,7 @@ export default function NodeTable() {
     },
   });
 
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.Server, { groupId: number; search: string }>
@@ -78,6 +80,8 @@ export default function NodeTable() {
                       'bg-rose-500': row.original.protocol === 'vmess',
                       'bg-blue-500': row.original.protocol === 'vless',
                       'bg-yellow-500': row.original.protocol === 'trojan',
+                      'bg-purple-500': row.original.protocol === 'hysteria2',
+                      'bg-cyan-500': row.original.protocol === 'tuic',
                     })}
                   >
                     {row.getValue('id')}
@@ -107,23 +111,11 @@ export default function NodeTable() {
             );
           },
         },
-
         {
-          accessorKey: 'last',
+          accessorKey: 'status',
           header: t('status'),
           cell: ({ row }) => {
-            const { last } = row.original;
-
-            return last ? (
-              <>
-                <Badge>{t('normal')}</Badge>
-                <span className='ml-2'>
-                  {t('onlineCount')}: {last.count}
-                </span>
-              </>
-            ) : (
-              <Badge variant='destructive'>{t('abnormal')}</Badge>
-            );
+            return <NodeStatusCell status={row.original?.status} />;
           },
         },
         {
@@ -203,6 +195,29 @@ export default function NodeTable() {
               }
             }}
           />,
+          <Button
+            key='copy'
+            variant='secondary'
+            onClick={async () => {
+              setLoading(true);
+              try {
+                const { id, sort, enable, updated_at, created_at, status, ...params } = row;
+                await createNode({
+                  ...params,
+                  enable: false,
+                } as API.CreateNodeRequest);
+                toast.success(t('copySuccess'));
+                ref.current?.refresh();
+                setLoading(false);
+                return true;
+              } catch (error) {
+                setLoading(false);
+                return false;
+              }
+            }}
+          >
+            {t('copy')}
+          </Button>,
           <ConfirmButton
             key='delete'
             trigger={<Button variant='destructive'>{t('delete')}</Button>}
@@ -238,6 +253,33 @@ export default function NodeTable() {
             />,
           ];
         },
+      }}
+      onSort={async (source, target, items) => {
+        const sourceIndex = items.findIndex((item) => String(item.id) === source);
+        const targetIndex = items.findIndex((item) => String(item.id) === target);
+
+        const originalSortMap = new Map(items.map((item) => [item.id, item.sort || item.id]));
+
+        const [movedItem] = items.splice(sourceIndex, 1);
+        items.splice(targetIndex, 0, movedItem!);
+
+        const updatedItems = items.map((item, index) => {
+          const originalSort = originalSortMap.get(item.id);
+          const newSort = originalSort !== undefined ? originalSort : item.sort;
+          return { ...item, sort: newSort };
+        });
+
+        const changedItems = updatedItems.filter(
+          (item) => originalSortMap.get(item.id) !== item.sort,
+        );
+
+        if (changedItems.length > 0) {
+          nodeSort({
+            sort: changedItems.map((item) => ({ id: item.id, sort: item.sort })),
+          });
+        }
+
+        return updatedItems;
       }}
     />
   );

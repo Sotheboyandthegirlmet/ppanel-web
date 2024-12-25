@@ -1,0 +1,44 @@
+{
+  "aliPay": "알리페이 결제",
+  "alipayf2f": {
+    "appId": "알리페이 애플리케이션 ID",
+    "invoiceName": "사용자 정의 제품 이름",
+    "invoiceNameDescription": "알리페이 청구서에 표시됩니다",
+    "privateKey": "알리페이 개인 키",
+    "publicKey": "알리페이 공개 키",
+    "sandbox": "샌드박스 모드",
+    "sandboxDescription": "결제를 테스트하기 위해 샌드박스 모드를 활성화합니다"
+  },
+  "enable": "사용",
+  "enableDescription": "이 결제 수단을 활성화합니다",
+  "epay": {
+    "key": "키",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "요금 방식",
+  "feeModeDescription": "추가 수수료의 부과 방식",
+  "feeModeItems": ["수수료 없음", "백분율", "고정 금액", "이상 두 가지"],
+  "feePercent": "수수료 비율(선택 사항)",
+  "feePercentDescription": "주문 금액에 추가 요금 부과",
+  "fixedFee": "고정 수수료(선택 사항)",
+  "fixedFeeDescription": "주문 금액에 고정 요금 추가",
+  "iconUrl": "아이콘 URL(선택 사항)",
+  "iconUrlDescription": "프론트엔드 표시용",
+  "inputPlaceholder": "입력하세요",
+  "key": "키",
+  "notifyUrl": "사용자 정의 알림 도메인 (선택 사항)",
+  "notifyUrlDescription": "게이트웨이 알림이 이 도메인으로 전송됩니다",
+  "payForRecommendations": "추천에 대한 지불",
+  "pid": "PID",
+  "saveSuccess": "저장 성공",
+  "showName": "이름 표시",
+  "showNameDescription": "프론트엔드 표시용",
+  "stripe": {
+    "publicKey": "공개 키",
+    "secretKey": "비밀 키",
+    "webhookSecret": "웹훅 비밀 서명"
+  },
+  "url": "URL",
+  "wechatPay": "위챗페이"
+}

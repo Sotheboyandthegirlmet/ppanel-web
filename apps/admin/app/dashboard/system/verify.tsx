@@ -26,7 +26,7 @@ export default function Verify() {
       await updateVerifyConfig({
         ...data,
         [key]: value,
-      } as API.GetVerifyConfigResponse);
+      } as API.VerifyConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

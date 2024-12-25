@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Configurações da Conta",
+    "loginPassword": "Senha de Login",
+    "newPassword": "Nova Senha",
+    "passwordMismatch": "As senhas digitadas não coincidem",
+    "repeatNewPassword": "Repita a Nova Senha",
+    "updatePassword": "Atualizar Senha",
+    "updateSuccess": "Atualização bem-sucedida"
+  },
+  "notify": {
+    "bind": "Ir para Vinculação",
+    "emailNotification": "Notificação por e-mail",
+    "notificationSettings": "Configurações de notificação",
+    "telegramId": "ID do Telegram",
+    "telegramIdPlaceholder": "Insira o ID do Telegram",
+    "telegramNotification": "Notificação do Telegram",
+    "unbind": "Desvincular",
+    "updateSuccess": "Atualização bem-sucedida"
+  },
+  "notifyEvent": {
+    "balanceChange": "Mudança de saldo",
+    "finance": "Finanças",
+    "login": "Login",
+    "notificationEvents": "Eventos de notificação",
+    "subscribe": "Inscrever-se",
+    "updateSuccess": "Atualização bem-sucedida"
+  }
+}

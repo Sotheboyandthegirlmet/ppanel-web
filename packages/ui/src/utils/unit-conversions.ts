@@ -11,13 +11,13 @@ export function unitConversion(
     case 'dollarsToCents':
       return evaluate(`${value} * 100`);
     case 'bitsToMb':
-      return evaluate(`${value} / 1000 / 1000`);
+      return evaluate(`${value} / 1024 / 1024`);
     case 'mbToBits':
-      return evaluate(`${value} * 1000 * 1000`);
+      return evaluate(`${value} * 1024 * 1024`);
     case 'bytesToGb':
-      return evaluate(`${value} / 1000 / 1000 / 1000`);
+      return evaluate(`${value} / 1024 / 1024 / 1024`);
     case 'gbToBytes':
-      return evaluate(`${value} * 1000 * 1000 * 1000`);
+      return evaluate(`${value} * 1024 * 1024 * 1024`);
     default:
       throw new Error('Invalid conversion type');
   }

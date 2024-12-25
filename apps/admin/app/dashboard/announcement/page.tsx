@@ -5,7 +5,6 @@ import {
   deleteAnnouncement,
   getAnnouncementList,
   updateAnnouncement,
-  updateAnnouncementEnable,
 } from '@/services/admin/announcement';
 import { ConfirmButton } from '@repo/ui/confirm-button';
 import { format } from '@shadcn/ui/lib/date-fns';
@@ -21,7 +20,7 @@ import NoticeForm from './notice-form';
 export default function Page() {
   const t = useTranslations('announcement');
   const [loading, setLoading] = useState(false);
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.Announcement, { enable: boolean; search: string }>
@@ -51,16 +50,52 @@ export default function Page() {
       }}
       columns={[
         {
-          accessorKey: 'enable',
-          header: t('enable'),
+          accessorKey: 'show',
+          header: t('show'),
           cell: ({ row }) => {
             return (
               <Switch
-                defaultChecked={row.getValue('enable')}
+                defaultChecked={row.getValue('show')}
                 onCheckedChange={async (checked) => {
-                  await updateAnnouncementEnable({
-                    id: row.original.id,
-                    enable: checked,
+                  await updateAnnouncement({
+                    ...row.original,
+                    show: checked,
+                  });
+                  ref.current?.refresh();
+                }}
+              />
+            );
+          },
+        },
+        {
+          accessorKey: 'pinned',
+          header: t('pinned'),
+          cell: ({ row }) => {
+            return (
+              <Switch
+                defaultChecked={row.getValue('pinned')}
+                onCheckedChange={async (checked) => {
+                  await updateAnnouncement({
+                    ...row.original,
+                    pinned: checked,
+                  });
+                  ref.current?.refresh();
+                }}
+              />
+            );
+          },
+        },
+        {
+          accessorKey: 'popup',
+          header: t('popup'),
+          cell: ({ row }) => {
+            return (
+              <Switch
+                defaultChecked={row.getValue('popup')}
+                onCheckedChange={async (checked) => {
+                  await updateAnnouncement({
+                    ...row.original,
+                    popup: checked,
                   });
                   ref.current?.refresh();
                 }}

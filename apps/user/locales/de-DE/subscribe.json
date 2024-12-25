@@ -1,0 +1,34 @@
+{
+  "Day": "Tag",
+  "Hour": "Stunde",
+  "Minute": "Minute",
+  "Month": "Monat",
+  "Year": "Jahr",
+  "all": "Alle",
+  "billing": {
+    "billingTitle": "Produktrechnung",
+    "couponDiscount": "Rabattcode-Rabatt",
+    "duration": "Paketdauer",
+    "fee": "Bearbeitungsgebühr",
+    "price": "Preis",
+    "productDiscount": "Produktrabatt",
+    "total": "Gesamtpreis"
+  },
+  "buy": "Kaufen",
+  "category": "Kategorie",
+  "detail": {
+    "availableTraffic": "Verfügbares Datenvolumen",
+    "connectedDevices": "Gleichzeitig verbundene IP-Anzahl",
+    "connectionSpeed": "Verbindungsgeschwindigkeit",
+    "productDetail": "Produktdetails"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (Face-to-Face)",
+    "balance": "Guthaben",
+    "epay": "E-Pay",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "productDescription": "Produktbeschreibung",
+  "products": "Produkte"
+}

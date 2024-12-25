@@ -25,7 +25,7 @@ export default function Site() {
       await updateCurrencyConfig({
         ...data,
         [key]: value,
-      } as API.UpdateCurrencyConfigRequest);
+      } as API.CurrencyConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

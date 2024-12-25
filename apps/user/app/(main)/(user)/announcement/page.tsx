@@ -1,10 +1,9 @@
 'use client';
 
+import { Empty } from '@/components/empty';
 import { queryAnnouncement } from '@/services/user/announcement';
-import Empty from '@repo/ui/empty';
 import { Markdown } from '@repo/ui/markdown';
-import { formatDate } from '@repo/ui/utils';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
+import { Timeline } from '@shadcn/ui/timeline';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Page() {
@@ -13,28 +12,23 @@ export default function Page() {
     queryFn: async () => {
       const { data } = await queryAnnouncement({
         page: 1,
-        size: 20,
+        size: 99,
+        pinned: false,
+        popup: false,
       });
       return data.data?.announcements || [];
     },
   });
-  return (
-    <div className='flex flex-col gap-5'>
-      {data?.length ? (
-        data.map((item) => (
-          <Card key={item.id}>
-            <CardHeader>
-              <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{formatDate(item.updated_at)}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Markdown>{item.content}</Markdown>
-            </CardContent>
-          </Card>
-        ))
-      ) : (
-        <Empty />
-      )}
-    </div>
+  return data && data.length > 0 ? (
+    <Timeline
+      data={
+        data.map((item) => ({
+          title: item.title,
+          content: <Markdown>{item.content}</Markdown>,
+        })) || []
+      }
+    />
+  ) : (
+    <Empty />
   );
 }

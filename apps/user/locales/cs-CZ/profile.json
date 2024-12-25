@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Nastavení účtu",
+    "loginPassword": "Přihlašovací heslo",
+    "newPassword": "Nové heslo",
+    "passwordMismatch": "Hesla se neshodují",
+    "repeatNewPassword": "Zopakujte nové heslo",
+    "updatePassword": "Aktualizovat heslo",
+    "updateSuccess": "Aktualizace úspěšná"
+  },
+  "notify": {
+    "bind": "Přejít na vazbu",
+    "emailNotification": "E-mailové oznámení",
+    "notificationSettings": "Nastavení oznámení",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "Zadejte Telegram ID",
+    "telegramNotification": "Telegram oznámení",
+    "unbind": "Zrušit vazbu",
+    "updateSuccess": "Aktualizace byla úspěšná"
+  },
+  "notifyEvent": {
+    "balanceChange": "Změna zůstatku",
+    "finance": "Finance",
+    "login": "Přihlášení",
+    "notificationEvents": "Upozornění na události",
+    "subscribe": "Předplatit",
+    "updateSuccess": "Aktualizace úspěšná"
+  }
+}

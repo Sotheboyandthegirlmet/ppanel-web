@@ -62,21 +62,6 @@ export async function getAnnouncement(
   });
 }
 
-/** Update announcement enable PUT /v1/admin/announcement/enable */
-export async function updateAnnouncementEnable(
-  body: API.UpdateAnnouncementEnableRequest,
-  options?: { [key: string]: any },
-) {
-  return request<API.Response & { data?: any }>('/v1/admin/announcement/enable', {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: body,
-    ...(options || {}),
-  });
-}
-
 /** Get announcement list GET /v1/admin/announcement/list */
 export async function getAnnouncementList(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)

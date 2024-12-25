@@ -1,4 +1,4 @@
-export default function Empty() {
+export default function Empty({ description }: { description?: React.ReactNode }) {
   return (
     <div className='flex flex-col items-center justify-center p-6 py-16'>
       <svg
@@ -21,6 +21,7 @@ export default function Empty() {
           </g>
         </g>
       </svg>
+      <p className='mt-6 text-center text-gray-500'>{description}</p>
     </div>
   );
 }

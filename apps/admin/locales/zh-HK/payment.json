@@ -1,0 +1,44 @@
+{
+  "aliPay": "支付寶支付",
+  "alipayf2f": {
+    "appId": "支付寶應用ID",
+    "invoiceName": "自訂產品名稱",
+    "invoiceNameDescription": "將顯示在支付寶賬單中",
+    "privateKey": "支付寶私鑰",
+    "publicKey": "支付寶公鑰",
+    "sandbox": "沙箱模式",
+    "sandboxDescription": "啟用沙箱模式以測試支付"
+  },
+  "enable": "啟用",
+  "enableDescription": "啟用此支付方式",
+  "epay": {
+    "key": "KEY",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "收費方式",
+  "feeModeDescription": "額外手續費的收費方式",
+  "feeModeItems": ["無手續費", "百分比", "固定金額", "以上兩種"],
+  "feePercent": "百分比費用（可選）",
+  "feePercentDescription": "在訂單金額之上添加費用",
+  "fixedFee": "固定費用（可選）",
+  "fixedFeeDescription": "在訂單金額之上添加固定費用",
+  "iconUrl": "圖示 URL（可選）",
+  "iconUrlDescription": "用於前端顯示",
+  "inputPlaceholder": "請輸入",
+  "key": "KEY",
+  "notifyUrl": "自訂通知域（可選）",
+  "notifyUrlDescription": "閘道通知將發送到此網域",
+  "payForRecommendations": "支付推薦",
+  "pid": "PID",
+  "saveSuccess": "儲存成功",
+  "showName": "顯示名稱",
+  "showNameDescription": "用於前端顯示",
+  "stripe": {
+    "publicKey": "PUBLIC KEY",
+    "secretKey": "SECRET KEY",
+    "webhookSecret": "WEBHOOK 密鑰簽名"
+  },
+  "url": "URL",
+  "wechatPay": "微信支付"
+}

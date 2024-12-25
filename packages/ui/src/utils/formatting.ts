@@ -2,11 +2,12 @@ import { intlFormat } from '@shadcn/ui/lib/date-fns';
 
 export function formatBytes(bytes: number) {
   if (bytes === 0) return '0 B';
-  const k = 1000, // or 1024
-    sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-    i = Math.floor(Math.log(bytes) / Math.log(k));
 
-  return (bytes / Math.pow(k, i)).toPrecision(3) + ' ' + sizes[i];
+  const k = 1024;
+  const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return (bytes / Math.pow(k, i)).toFixed(2) + ' ' + sizes[i];
 }
 
 export function formatDate(date?: Date | number, showTime: boolean = true) {

@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { useTranslations } from 'next-intl';
 import { useRef } from 'react';
 
+import { Empty } from '@/components/empty';
 import { formatDate } from '@repo/ui/utils';
 import Recharge from '../order/recharge';
 
@@ -71,6 +72,7 @@ export default function Page() {
             </Card>
           );
         }}
+        empty={<Empty />}
       />
     </>
   );

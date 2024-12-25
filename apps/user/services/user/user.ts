@@ -24,9 +24,20 @@ export async function queryUserBalanceLog(options?: { [key: string]: any }) {
   );
 }
 
+/** Bind Telegram GET /v1/public/user/bind_telegram */
+export async function bindTelegram(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: API.BindTelegramResponse }>(
+    '/v1/public/user/bind_telegram',
+    {
+      method: 'GET',
+      ...(options || {}),
+    },
+  );
+}
+
 /** Query User Info GET /v1/public/user/info */
 export async function queryUserInfo(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.UserInfo }>('/v1/public/user/info', {
+  return request<API.Response & { data?: API.User }>('/v1/public/user/info', {
     method: 'GET',
     ...(options || {}),
   });
@@ -86,4 +97,12 @@ export async function queryUserSubscribe(options?: { [key: string]: any }) {
       ...(options || {}),
     },
   );
+}
+
+/** Unbind Telegram POST /v1/public/user/unbind_telegram */
+export async function unbindTelegram(options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/public/user/unbind_telegram', {
+    method: 'POST',
+    ...(options || {}),
+  });
 }

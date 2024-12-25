@@ -36,7 +36,7 @@ export default function Epay() {
       await updateEpayPaymentConfig({
         ...data,
         [key]: value,
-      } as API.PaymentConfig);
+      } as API.UpdateEpayRequest);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

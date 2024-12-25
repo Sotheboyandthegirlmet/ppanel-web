@@ -1,0 +1,34 @@
+{
+  "Day": "दिन",
+  "Hour": "घंटा",
+  "Minute": "मिनट",
+  "Month": "महीना",
+  "Year": "वर्ष",
+  "all": "सभी",
+  "billing": {
+    "billingTitle": "उत्पाद बिल",
+    "couponDiscount": "कूपन छूट",
+    "duration": "पैकेज अवधि",
+    "fee": "शुल्क",
+    "price": "मूल्य",
+    "productDiscount": "उत्पाद छूट",
+    "total": "कुल मूल्य"
+  },
+  "buy": "खरीदें",
+  "category": "श्रेणी",
+  "detail": {
+    "availableTraffic": "उपलब्ध ट्रैफ़िक",
+    "connectedDevices": "समानांतर कनेक्टेड IP संख्या",
+    "connectionSpeed": "कनेक्शन गति",
+    "productDetail": "उत्पाद विवरण"
+  },
+  "methods": {
+    "alipay_f2f": "अलीपे (सामना-सामना)",
+    "balance": "शेष राशि",
+    "epay": "ई-पे",
+    "stripe_alipay": "स्ट्राइप (अलीपे)",
+    "stripe_wechat_pay": "स्ट्राइप (वीचैट)"
+  },
+  "productDescription": "उत्पाद विवरण",
+  "products": "उत्पाद"
+}

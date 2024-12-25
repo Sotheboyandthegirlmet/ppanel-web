@@ -16,7 +16,6 @@ import {
   SheetTrigger,
 } from '@shadcn/ui/sheet';
 import { useTranslations } from 'next-intl';
-import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 const formSchema = z.object({
@@ -41,7 +40,6 @@ export default function DocumentForm<T extends Record<string, any>>({
   title,
 }: DocumentFormProps<T>) {
   const t = useTranslations('document');
-  const { resolvedTheme } = useTheme();
   const [open, setOpen] = useState(false);
   const form = useForm({
     resolver: zodResolver(formSchema),

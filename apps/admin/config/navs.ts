@@ -74,6 +74,11 @@ export const navs = [
       },
     ],
   },
+  {
+    title: 'System Tool',
+    url: '/dashboard/tool',
+    icon: 'flat-color-icons:info',
+  },
 ];
 
 export function findNavByUrl(url: string) {

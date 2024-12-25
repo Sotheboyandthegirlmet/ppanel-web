@@ -28,7 +28,7 @@ export default function Page() {
     { value: 5, label: t('status.5'), className: 'bg-green-500' },
   ];
 
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   const { data: subscribeList } = useQuery({
     queryKey: ['getSubscribeList', 'all'],

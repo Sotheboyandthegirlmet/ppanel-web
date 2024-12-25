@@ -38,6 +38,7 @@ export interface ProListProps<TData, TValue> {
     textPageOf: (current: number, total: number) => string;
     selectedRowsText: (total: number) => string;
   }>;
+  empty?: React.ReactNode;
 }
 export interface ProListActions {
   refresh: () => void;
@@ -52,6 +53,7 @@ export function ProList<TData, TValue extends Record<string, unknown>>({
   renderItem,
   action,
   texts,
+  empty,
 }: ProListProps<TData, TValue>) {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [rowSelection, setRowSelection] = useState<{ [key: number]: boolean }>({});
@@ -187,9 +189,7 @@ export function ProList<TData, TValue extends Record<string, unknown>>({
               return <div key={index}>{renderItem(item, checkbox)}</div>;
             })
           ) : (
-            <div className='flex items-center justify-center py-24'>
-              <Empty />
-            </div>
+            <div className='flex items-center justify-center py-24'>{empty || <Empty />}</div>
           )}
         </div>
 

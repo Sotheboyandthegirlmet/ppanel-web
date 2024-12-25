@@ -1,0 +1,44 @@
+{
+  "aliPay": "پرداخت علی‌پی",
+  "alipayf2f": {
+    "appId": "شناسه برنامه Alipay",
+    "invoiceName": "نام محصول سفارشی",
+    "invoiceNameDescription": "در صورتحساب Alipay نمایش داده خواهد شد",
+    "privateKey": "کلید خصوصی Alipay",
+    "publicKey": "کلید عمومی Alipay",
+    "sandbox": "حالت Sandbox",
+    "sandboxDescription": "حالت sandbox را برای آزمایش پرداخت‌ها فعال کنید"
+  },
+  "enable": "فعال کردن",
+  "enableDescription": "این روش پرداخت را فعال کنید",
+  "epay": {
+    "key": "کلید",
+    "pid": "شناسه محصول",
+    "url": "نشانی وب"
+  },
+  "feeMode": "حالت هزینه",
+  "feeModeDescription": "روش دریافت هزینه برای هزینه‌های اضافی",
+  "feeModeItems": ["بدون هزینه", "درصدی", "مبلغ ثابت", "هر دو"],
+  "feePercent": "درصد کارمزد (اختیاری)",
+  "feePercentDescription": "افزودن کارمزد به مبلغ سفارش",
+  "fixedFee": "هزینه ثابت (اختیاری)",
+  "fixedFeeDescription": "افزودن هزینه ثابت به مبلغ سفارش",
+  "iconUrl": "آدرس آیکون (اختیاری)",
+  "iconUrlDescription": "برای نمایش در رابط کاربری استفاده می‌شود",
+  "inputPlaceholder": "لطفاً وارد کنید",
+  "key": "کلید",
+  "notifyUrl": "دامنه اعلان سفارشی (اختیاری)",
+  "notifyUrlDescription": "اعلان‌های درگاه به این دامنه ارسال خواهند شد",
+  "payForRecommendations": "پرداخت برای توصیه‌ها",
+  "pid": "شناسه فرآیند",
+  "saveSuccess": "ذخیره با موفقیت انجام شد",
+  "showName": "نمایش نام",
+  "showNameDescription": "برای نمایش در قسمت جلویی استفاده می‌شود",
+  "stripe": {
+    "publicKey": "کلید عمومی",
+    "secretKey": "کلید مخفی",
+    "webhookSecret": "کلید مخفی وب‌هوک"
+  },
+  "url": "آدرس اینترنتی",
+  "wechatPay": "وی‌چت پی"
+}

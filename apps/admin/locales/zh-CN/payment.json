@@ -5,7 +5,9 @@
     "invoiceName": "自定义产品名称",
     "invoiceNameDescription": "将显示在支付宝账单中",
     "privateKey": "支付宝私钥",
-    "publicKey": "支付宝公钥"
+    "publicKey": "支付宝公钥",
+    "sandbox": "沙箱模式",
+    "sandboxDescription": "启用沙箱模式以测试支付"
   },
   "enable": "启用",
   "enableDescription": "启用此支付方式",

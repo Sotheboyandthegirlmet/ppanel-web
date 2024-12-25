@@ -9,12 +9,13 @@
     "updateSuccess": "更新成功"
   },
   "notify": {
-    "bind": "绑定",
+    "bind": "前往绑定",
     "emailNotification": "邮件通知",
     "notificationSettings": "通知设置",
     "telegramId": "Telegram ID",
     "telegramIdPlaceholder": "输入 Telegram ID",
     "telegramNotification": "Telegram 通知",
+    "unbind": "解除绑定",
     "updateSuccess": "更新成功"
   },
   "notifyEvent": {

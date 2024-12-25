@@ -1,12 +1,11 @@
-'use client';
-
 import { type OnMount } from '@monaco-editor/react';
 import { Button } from '@shadcn/ui/button';
 import { cn } from '@shadcn/ui/lib/utils';
 import { useSize } from 'ahooks';
 import { EyeIcon, EyeOff, FullscreenIcon, MinimizeIcon } from 'lucide-react';
 import dynamic from 'next/dynamic';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 const Editor = dynamic(() => import('@monaco-editor/react'), { ssr: false });
 
 export interface MonacoEditorProps {
@@ -22,8 +21,16 @@ export interface MonacoEditorProps {
   className?: string;
 }
 
+function debounce<T extends (...args: any[]) => void>(func: T, delay: number) {
+  let timeoutId: ReturnType<typeof setTimeout>;
+  return function (...args: Parameters<T>) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+}
+
 export function MonacoEditor({
-  value,
+  value: propValue,
   onChange,
   onBlur,
   title = 'Editor Title',
@@ -34,22 +41,44 @@ export function MonacoEditor({
   language = 'markdown',
   className,
 }: MonacoEditorProps) {
+  const [internalValue, setInternalValue] = useState<string | undefined>(propValue);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isPreviewVisible, setIsPreviewVisible] = useState(false);
 
-  const toggleFullscreen = () => setIsFullscreen(!isFullscreen);
-  const togglePreview = () => setIsPreviewVisible(!isPreviewVisible);
+  const ref = useRef<HTMLDivElement>(null);
+  const size = useSize(ref);
+
+  useEffect(() => {
+    setInternalValue(propValue);
+  }, [propValue]);
+
+  const debouncedOnChange = useRef(
+    debounce((newValue: string | undefined) => {
+      if (onChange) {
+        onChange(newValue);
+      }
+    }, 300),
+  ).current;
 
   const handleEditorDidMount: OnMount = (editor, monaco) => {
     if (onMount) onMount(editor, monaco);
+
+    editor.onDidChangeModelContent(() => {
+      const newValue = editor.getValue();
+      setInternalValue(newValue);
+      debouncedOnChange(newValue);
+    });
+
     editor.onDidBlurEditorWidget(() => {
       if (onBlur) {
         onBlur(editor.getValue());
       }
     });
   };
-  const ref = useRef<HTMLDivElement>(null);
-  const size = useSize(ref);
+
+  const toggleFullscreen = () => setIsFullscreen(!isFullscreen);
+  const togglePreview = () => setIsPreviewVisible(!isPreviewVisible);
+
   return (
     <div ref={ref} className='size-full'>
       <div style={size}>
@@ -86,8 +115,11 @@ export function MonacoEditor({
             >
               <Editor
                 language={language}
-                value={value}
-                onChange={onChange}
+                value={internalValue}
+                onChange={(newValue) => {
+                  setInternalValue(newValue);
+                  debouncedOnChange(newValue);
+                }}
                 onMount={handleEditorDidMount}
                 className=''
                 options={{
@@ -122,7 +154,7 @@ export function MonacoEditor({
                   });
                 }}
               />
-              {!value && placeholder && (
+              {!internalValue?.trim() && placeholder && (
                 <pre
                   className='text-muted-foreground pointer-events-none absolute left-7 top-4 text-sm'
                   style={{ userSelect: 'none' }}
@@ -132,7 +164,7 @@ export function MonacoEditor({
               )}
             </div>
             {render && isPreviewVisible && (
-              <div className='w-1/2 flex-1 overflow-auto border-l p-4'>{render(value)}</div>
+              <div className='w-1/2 flex-1 overflow-auto border-l p-4'>{render(internalValue)}</div>
             )}
           </div>
         </div>

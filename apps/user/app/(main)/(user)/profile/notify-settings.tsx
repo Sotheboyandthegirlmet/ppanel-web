@@ -1,7 +1,7 @@
 'use client';
 
 import useGlobalStore from '@/config/use-global';
-import { updateUserNotifySetting } from '@/services/user/user';
+import { bindTelegram, unbindTelegram, updateUserNotifySetting } from '@/services/user/user';
 import { Button } from '@shadcn/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@shadcn/ui/form';
@@ -20,7 +20,7 @@ const FormSchema = z.object({
 
 export default function NotifySettings() {
   const t = useTranslations('profile.notify');
-  const { user } = useGlobalStore();
+  const { user, getUserInfo } = useGlobalStore();
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -59,15 +59,22 @@ export default function NotifySettings() {
                         onChange={(e) => {
                           field.onChange(e.target.value ? Number(e.target.value) : '');
                         }}
+                        disabled
                       />
                       <Button
                         size='sm'
                         type='button'
                         onClick={async () => {
-                          form.handleSubmit(onSubmit)();
+                          if (user?.telegram) {
+                            await unbindTelegram();
+                            await getUserInfo();
+                          } else {
+                            const { data } = await bindTelegram();
+                            data.data?.url && window.open(data.data.url, '_blank');
+                          }
                         }}
                       >
-                        {t('bind')}
+                        {t(user?.telegram ? 'unbind' : 'bind')}
                       </Button>
                     </div>
                   </FormControl>

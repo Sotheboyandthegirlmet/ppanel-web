@@ -1,0 +1,44 @@
+{
+  "aliPay": "Alipay fizetés",
+  "alipayf2f": {
+    "appId": "Alipay alkalmazásazonosító",
+    "invoiceName": "Egyedi terméknév",
+    "invoiceNameDescription": "A számlán az Alipay-ben fog megjelenni",
+    "privateKey": "Alipay privát kulcs",
+    "publicKey": "Alipay nyilvános kulcs",
+    "sandbox": "Tesztkörnyezet",
+    "sandboxDescription": "Tesztkörnyezet engedélyezése a fizetések teszteléséhez"
+  },
+  "enable": "Engedélyezés",
+  "enableDescription": "Engedélyezze ezt a fizetési módot",
+  "epay": {
+    "key": "KULCS",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Díjfizetési mód",
+  "feeModeDescription": "További díjak felszámításának módja",
+  "feeModeItems": ["Nincs díj", "Százalékos", "Fix összeg", "Mindkettő"],
+  "feePercent": "Díjszázalék (opcionális)",
+  "feePercentDescription": "Díj hozzáadása a rendelés összegéhez",
+  "fixedFee": "Fix díj (opcionális)",
+  "fixedFeeDescription": "Rögzített díj hozzáadása a rendelés összegéhez",
+  "iconUrl": "Ikon URL (opcionális)",
+  "iconUrlDescription": "Előnézeti kép megjelenítéséhez",
+  "inputPlaceholder": "Kérjük, írja be",
+  "key": "KULCS",
+  "notifyUrl": "Egyéni értesítési domain (opcionális)",
+  "notifyUrlDescription": "A kapu értesítéseket erre a tartományra küldi",
+  "payForRecommendations": "Fizetés ajánlásokért",
+  "pid": "PID",
+  "saveSuccess": "Sikeres mentés",
+  "showName": "Megjelenítési név",
+  "showNameDescription": "Előnézet megjelenítésére használatos",
+  "stripe": {
+    "publicKey": "NYILVÁNOS KULCS",
+    "secretKey": "TITKOS KULCS",
+    "webhookSecret": "WEBHOOK TITKOS ALÁÍRÁS"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat fizetés"
+}

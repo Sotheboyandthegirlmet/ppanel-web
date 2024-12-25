@@ -1,0 +1,15 @@
+{
+  "amount": "Cantidad",
+  "balance": "saldo",
+  "createdAt": "hora",
+  "title": "Saldo de la cuenta",
+  "type": {
+    "0": "tipo",
+    "1": "recarga",
+    "2": "retiro",
+    "3": "compra",
+    "4": "reembolso",
+    "5": "recompensa",
+    "6": "comisión"
+  }
+}

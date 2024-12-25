@@ -1,0 +1,44 @@
+{
+  "aliPay": "अलीपे भुगतान",
+  "alipayf2f": {
+    "appId": "अलीपे एप्लिकेशन आईडी",
+    "invoiceName": "कस्टम उत्पाद नाम",
+    "invoiceNameDescription": "अलीपे बिल में प्रदर्शित होगा",
+    "privateKey": "अलीपे निजी कुंजी",
+    "publicKey": "अलीपे सार्वजनिक कुंजी",
+    "sandbox": "सैंडबॉक्स मोड",
+    "sandboxDescription": "भुगतान का परीक्षण करने के लिए सैंडबॉक्स मोड सक्षम करें"
+  },
+  "enable": "सक्षम करें",
+  "enableDescription": "इस भुगतान विधि को सक्षम करें",
+  "epay": {
+    "key": "कुंजी",
+    "pid": "पीआईडी",
+    "url": "यूआरएल"
+  },
+  "feeMode": "शुल्क मोड",
+  "feeModeDescription": "अतिरिक्त शुल्क की वसूली का तरीका",
+  "feeModeItems": ["कोई शुल्क नहीं", "प्रतिशत", "निश्चित राशि", "उपरोक्त दोनों"],
+  "feePercent": "प्रतिशत शुल्क (वैकल्पिक)",
+  "feePercentDescription": "ऑर्डर राशि के ऊपर शुल्क जोड़ा जाएगा",
+  "fixedFee": "निश्चित शुल्क (वैकल्पिक)",
+  "fixedFeeDescription": "ऑर्डर राशि के ऊपर एक निश्चित शुल्क जोड़ा जाता है",
+  "iconUrl": "आइकन URL (वैकल्पिक)",
+  "iconUrlDescription": "फ्रंटएंड प्रदर्शन के लिए उपयोग किया जाता है",
+  "inputPlaceholder": "कृपया दर्ज करें",
+  "key": "कुंजी",
+  "notifyUrl": "कस्टम अधिसूचना डोमेन (वैकल्पिक)",
+  "notifyUrlDescription": "गेटवे सूचना इस डोमेन पर भेजी जाएगी",
+  "payForRecommendations": "सिफारिशों के लिए भुगतान करें",
+  "pid": "पीआईडी",
+  "saveSuccess": "सहेजा गया",
+  "showName": "नाम दिखाएं",
+  "showNameDescription": "फ्रंटएंड प्रदर्शन के लिए उपयोग किया जाता है",
+  "stripe": {
+    "publicKey": "सार्वजनिक कुंजी",
+    "secretKey": "गुप्त कुंजी",
+    "webhookSecret": "वेबहुक कुंजी हस्ताक्षर"
+  },
+  "url": "यूआरएल",
+  "wechatPay": "वीचैट पे"
+}

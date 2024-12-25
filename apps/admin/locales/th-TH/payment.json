@@ -1,0 +1,44 @@
+{
+  "aliPay": "ชำระเงินผ่านอาลีเพย์",
+  "alipayf2f": {
+    "appId": "รหัสแอปพลิเคชัน Alipay",
+    "invoiceName": "ชื่อผลิตภัณฑ์ที่กำหนดเอง",
+    "invoiceNameDescription": "จะแสดงในใบแจ้งหนี้ของ Alipay",
+    "privateKey": "กุญแจส่วนตัวของ Alipay",
+    "publicKey": "กุญแจสาธารณะของ Alipay",
+    "sandbox": "โหมดแซนด์บ็อกซ์",
+    "sandboxDescription": "เปิดใช้งานโหมดแซนด์บ็อกซ์เพื่อทดสอบการชำระเงิน"
+  },
+  "enable": "เปิดใช้งาน",
+  "enableDescription": "เปิดใช้งานวิธีการชำระเงินนี้",
+  "epay": {
+    "key": "คีย์",
+    "pid": "พีไอดี",
+    "url": "ยูอาร์แอล"
+  },
+  "feeMode": "วิธีการคิดค่าบริการ",
+  "feeModeDescription": "วิธีการคิดค่าธรรมเนียมเพิ่มเติม",
+  "feeModeItems": ["ไม่มีค่าธรรมเนียม", "เปอร์เซ็นต์", "จำนวนเงินคงที่", "ทั้งสองอย่าง"],
+  "feePercent": "เปอร์เซ็นต์ค่าธรรมเนียม (ไม่บังคับ)",
+  "feePercentDescription": "เพิ่มค่าธรรมเนียมจากยอดสั่งซื้อ",
+  "fixedFee": "ค่าธรรมเนียมคงที่ (ไม่บังคับ)",
+  "fixedFeeDescription": "เพิ่มค่าธรรมเนียมคงที่เหนือจำนวนเงินในคำสั่งซื้อ",
+  "iconUrl": "URL ไอคอน (ไม่บังคับ)",
+  "iconUrlDescription": "ใช้สำหรับแสดงผลด้านหน้า",
+  "inputPlaceholder": "กรุณาใส่ข้อมูล",
+  "key": "กุญแจ",
+  "notifyUrl": "โดเมนการแจ้งเตือนที่กำหนดเอง (ไม่บังคับ)",
+  "notifyUrlDescription": "การแจ้งเตือนเกตเวย์จะถูกส่งไปยังโดเมนนี้",
+  "payForRecommendations": "ชำระเงินสำหรับคำแนะนำ",
+  "pid": "PID",
+  "saveSuccess": "บันทึกสำเร็จ",
+  "showName": "แสดงชื่อ",
+  "showNameDescription": "ใช้สำหรับแสดงผลด้านหน้า",
+  "stripe": {
+    "publicKey": "PUBLIC KEY",
+    "secretKey": "SECRET KEY",
+    "webhookSecret": "WEBHOOK คีย์ลับ"
+  },
+  "url": "URL",
+  "wechatPay": "วีแชทเพย์"
+}

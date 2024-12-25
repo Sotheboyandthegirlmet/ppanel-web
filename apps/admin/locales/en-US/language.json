@@ -4,6 +4,7 @@
   "en-US": "English",
   "es-ES": "Spanish",
   "es-MX": "Spanish (Mexico)",
+  "fa-IR": "Persian",
   "fi-FI": "Finnish",
   "fr-FR": "French",
   "hi-IN": "Hindi",
@@ -20,5 +21,5 @@
   "uk-UA": "Ukrainian",
   "vi-VN": "Vietnamese",
   "zh-CN": "Chinese (Simplified)",
-  "zh-TW": "Chinese (Traditional)"
+  "zh-HK": "Chinese (Traditional)"
 }

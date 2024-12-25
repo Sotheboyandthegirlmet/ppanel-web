@@ -1,0 +1,44 @@
+{
+  "aliPay": "Thanh toán qua Alipay",
+  "alipayf2f": {
+    "appId": "ID ứng dụng Alipay",
+    "invoiceName": "Tên sản phẩm tùy chỉnh",
+    "invoiceNameDescription": "Sẽ hiển thị trên hóa đơn Alipay",
+    "privateKey": "Khóa riêng Alipay",
+    "publicKey": "Khóa công khai Alipay",
+    "sandbox": "Chế độ sandbox",
+    "sandboxDescription": "Kích hoạt chế độ sandbox để kiểm tra thanh toán"
+  },
+  "enable": "Kích hoạt",
+  "enableDescription": "Kích hoạt phương thức thanh toán này",
+  "epay": {
+    "key": "KHÓA",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Phương thức tính phí",
+  "feeModeDescription": "Cách tính phí bổ sung",
+  "feeModeItems": ["Không phí dịch vụ", "Phần trăm", "Số tiền cố định", "Hai loại trên"],
+  "feePercent": "Phí phần trăm (tùy chọn)",
+  "feePercentDescription": "Thêm phí trên số tiền đơn hàng",
+  "fixedFee": "Phí cố định (tùy chọn)",
+  "fixedFeeDescription": "Thêm phí cố định vào trên số tiền đơn hàng",
+  "iconUrl": "URL biểu tượng (tùy chọn)",
+  "iconUrlDescription": "Dùng để hiển thị phía trước",
+  "inputPlaceholder": "Vui lòng nhập",
+  "key": "KEY",
+  "notifyUrl": "Miền thông báo tùy chỉnh (tùy chọn)",
+  "notifyUrlDescription": "Thông báo cổng sẽ được gửi đến miền này",
+  "payForRecommendations": "Thanh toán cho đề xuất",
+  "pid": "PID",
+  "saveSuccess": "Lưu thành công",
+  "showName": "Hiển thị tên",
+  "showNameDescription": "Dùng để hiển thị phía trước",
+  "stripe": {
+    "publicKey": "KHÓA CÔNG KHAI",
+    "secretKey": "KHÓA BÍ MẬT",
+    "webhookSecret": "CHỮ KÝ KHÓA WEBHOOK"
+  },
+  "url": "URL",
+  "wechatPay": "Thanh toán WeChat"
+}

@@ -1,0 +1,15 @@
+{
+  "amount": "Määrä",
+  "balance": "Saldo",
+  "createdAt": "Aika",
+  "title": "Tilin saldo",
+  "type": {
+    "0": "Tyyppi",
+    "1": "Lataus",
+    "2": "Nosto",
+    "3": "Osto",
+    "4": "Hyvitys",
+    "5": "Palkinto",
+    "6": "Komissio"
+  }
+}

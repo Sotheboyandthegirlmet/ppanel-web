@@ -34,7 +34,7 @@ export function JSONEditor(props: JSONEditorProps) {
               props.value && typeof props.value === 'string' ? value : JSON.parse(value),
             );
           } catch (e) {
-            console.error('Invalid JSON input:', e);
+            console.log('Invalid JSON input:', e);
           }
         }
       }}

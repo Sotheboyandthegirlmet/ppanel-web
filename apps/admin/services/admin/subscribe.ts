@@ -165,3 +165,18 @@ export async function getSubscribeList(
     },
   );
 }
+
+/** Subscribe sort POST /v1/admin/subscribe/sort */
+export async function subscribeSort(
+  body: API.SubscribeSortRequest,
+  options?: { [key: string]: any },
+) {
+  return request<API.Response & { data?: any }>('/v1/admin/subscribe/sort', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}

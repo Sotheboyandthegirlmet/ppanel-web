@@ -24,8 +24,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@shadcn/ui/tabs';
 import { Textarea } from '@shadcn/ui/textarea';
 
 function compareData(
-  originalData: API.GetApplicationResponse,
-  modifiedData: API.GetApplicationResponse,
+  originalData: API.ApplicationResponse,
+  modifiedData: API.ApplicationResponse,
 ): {
   added: API.Application[];
   deleted: API.Application[];
@@ -107,7 +107,7 @@ export default function Subscription() {
       await updateSubscribeConfig({
         ...data,
         [key]: value,
-      } as API.GetSubscribeConfigResponse);
+      } as API.SubscribeConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -123,7 +123,7 @@ export default function Subscription() {
       return data.data?.subscribe_types || [];
     },
   });
-  const [app, setApp] = useState<API.GetApplicationResponse>();
+  const [app, setApp] = useState<API.ApplicationResponse>();
   const appTypes = Object.keys(apps || {});
 
   useEffect(() => {
@@ -253,7 +253,7 @@ export default function Subscription() {
             setApp({
               ...app,
               [type]: newList,
-            } as API.GetApplicationResponse);
+            } as API.ApplicationResponse);
           };
 
           return (
@@ -300,7 +300,7 @@ export default function Subscription() {
                         setApp({
                           ...app,
                           [type]: list.filter((l, i) => i !== index),
-                        } as API.GetApplicationResponse);
+                        } as API.ApplicationResponse);
                       }}
                     >
                       {t('delete')}
@@ -320,7 +320,7 @@ export default function Subscription() {
                         platform: type,
                       },
                     ],
-                  } as API.GetApplicationResponse);
+                  } as API.ApplicationResponse);
                 }}
               >
                 {t('add')}

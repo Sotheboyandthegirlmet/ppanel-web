@@ -27,7 +27,7 @@ export default function Telegram() {
       await updateTelegramConfig({
         ...data,
         [key]: value,
-      } as API.GetTelegramConfigResponse);
+      } as API.TelegramConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -38,6 +38,19 @@ export default function Telegram() {
   return (
     <Table>
       <TableBody>
+        <TableRow>
+          <TableCell>
+            <Label>{t('webhookDomain')}</Label>
+            <p className='text-muted-foreground text-xs'>{t('webhookDomainDescription')}</p>
+          </TableCell>
+          <TableCell className='text-right'>
+            <EnhancedInput
+              placeholder={t('inputPlaceholderWebhookDomain')}
+              value={data?.telegram_web_hook_domain}
+              onValueBlur={(value) => updateConfig('telegram_web_hook_domain', value)}
+            />
+          </TableCell>
+        </TableRow>
         <TableRow>
           <TableCell>
             <Label>{t('botToken')}</Label>

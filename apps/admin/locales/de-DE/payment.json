@@ -1,0 +1,44 @@
+{
+  "aliPay": "Alipay-Zahlung",
+  "alipayf2f": {
+    "appId": "Alipay Anwendungs-ID",
+    "invoiceName": "Benutzerdefinierter Produktname",
+    "invoiceNameDescription": "Wird in der Alipay-Rechnung angezeigt",
+    "privateKey": "Alipay Privatschlüssel",
+    "publicKey": "Alipay Öffentlicher Schlüssel",
+    "sandbox": "Sandbox-Modus",
+    "sandboxDescription": "Aktivieren Sie den Sandbox-Modus, um Zahlungen zu testen"
+  },
+  "enable": "Aktivieren",
+  "enableDescription": "Diese Zahlungsmethode aktivieren",
+  "epay": {
+    "key": "SCHLÜSSEL",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Gebührenmodus",
+  "feeModeDescription": "Gebührenmodus für zusätzliche Gebühren",
+  "feeModeItems": ["Keine Gebühr", "Prozentsatz", "Fester Betrag", "Beides"],
+  "feePercent": "Prozentgebühr (optional)",
+  "feePercentDescription": "Gebühren werden zusätzlich zum Bestellbetrag hinzugefügt",
+  "fixedFee": "Feste Gebühr (optional)",
+  "fixedFeeDescription": "Feste Gebühr zusätzlich zum Bestellbetrag hinzufügen",
+  "iconUrl": "Symbol-URL (optional)",
+  "iconUrlDescription": "Zur Anzeige im Frontend verwendet",
+  "inputPlaceholder": "Bitte eingeben",
+  "key": "SCHLÜSSEL",
+  "notifyUrl": "Benutzerdefinierte Benachrichtigungs-URL (optional)",
+  "notifyUrlDescription": "Gateway-Benachrichtigungen werden an diese Domain gesendet",
+  "payForRecommendations": "Für Empfehlungen bezahlen",
+  "pid": "PID",
+  "saveSuccess": "Erfolgreich gespeichert",
+  "showName": "Anzeigename",
+  "showNameDescription": "Zur Anzeige im Frontend verwendet",
+  "stripe": {
+    "publicKey": "ÖFFENTLICHER SCHLÜSSEL",
+    "secretKey": "GEHEIMER SCHLÜSSEL",
+    "webhookSecret": "WEBHOOK-SCHLÜSSEL-SIGNATUR"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat Pay"
+}

@@ -1,0 +1,15 @@
+{
+  "amount": "Tutar",
+  "balance": "Bakiye",
+  "createdAt": "zaman",
+  "title": "Hesap Bakiyesi",
+  "type": {
+    "0": "Tür",
+    "1": "Yükleme",
+    "2": "Çekme",
+    "3": "Satın Alma",
+    "4": "İade",
+    "5": "Ödül",
+    "6": "Komisyon"
+  }
+}

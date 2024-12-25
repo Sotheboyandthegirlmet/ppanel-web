@@ -23,6 +23,8 @@
     "titlePlaceholder": "Please enter"
   },
   "hide": "Hide",
+  "pinned": "Pinned",
+  "popup": "Popup",
   "show": "Show",
   "title": "Title",
   "updateSuccess": "Update Success",

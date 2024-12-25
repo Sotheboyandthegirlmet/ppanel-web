@@ -19,7 +19,7 @@ import GroupForm from './group-form';
 const GroupTable = () => {
   const t = useTranslations('subscribe');
   const [loading, setLoading] = useState(false);
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.SubscribeGroup, any>

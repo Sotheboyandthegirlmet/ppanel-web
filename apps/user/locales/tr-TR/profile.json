@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Hesap Ayarları",
+    "loginPassword": "Giriş Şifresi",
+    "newPassword": "Yeni Şifre",
+    "passwordMismatch": "Şifreler uyuşmuyor",
+    "repeatNewPassword": "Yeni Şifreyi Tekrarla",
+    "updatePassword": "Şifreyi Güncelle",
+    "updateSuccess": "Güncelleme Başarılı"
+  },
+  "notify": {
+    "bind": "Bağlamaya Git",
+    "emailNotification": "E-posta Bildirimi",
+    "notificationSettings": "Bildirim Ayarları",
+    "telegramId": "Telegram Kimliği",
+    "telegramIdPlaceholder": "Telegram Kimliği girin",
+    "telegramNotification": "Telegram Bildirimi",
+    "unbind": "Bağlamayı Kaldır",
+    "updateSuccess": "Güncelleme Başarılı"
+  },
+  "notifyEvent": {
+    "balanceChange": "Bakiye Değişikliği",
+    "finance": "Finans",
+    "login": "Giriş",
+    "notificationEvents": "Bildirim Olayları",
+    "subscribe": "Abone Ol",
+    "updateSuccess": "Güncelleme Başarılı"
+  }
+}

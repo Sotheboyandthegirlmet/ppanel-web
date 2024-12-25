@@ -106,7 +106,7 @@
     "subscriptionDomainDescription": "用于订阅,留空则使用站点域名",
     "subscriptionDomainPlaceholder": "请输入订阅域名，多个域名请每行一个",
     "subscriptionPath": "订阅路径",
-    "subscriptionPathDescription": "用于订阅",
+    "subscriptionPathDescription": "用于订阅, 修改后请务必重启系统，以确保最佳性能体验",
     "subscriptionPathPlaceholder": "请输入",
     "subscriptionProtocol": "订阅协议",
     "wildcardResolution": "通配符解析",
@@ -133,7 +133,10 @@
     "groupURLDescription": "填写后，将在用户端显示或用于需要的位置",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "saveSuccess": "保存成功"
+    "inputPlaceholderWebhookDomain": "https://example.com",
+    "saveSuccess": "保存成功",
+    "webhookDomain": "Webhook 域名",
+    "webhookDomainDescription": "输入 webhook 服务器的域名"
   },
   "tos": {
     "saveSuccess": "保存成功",

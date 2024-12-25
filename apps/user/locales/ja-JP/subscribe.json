@@ -1,0 +1,34 @@
+{
+  "Day": "日",
+  "Hour": "時",
+  "Minute": "分",
+  "Month": "月",
+  "Year": "年",
+  "all": "すべて",
+  "billing": {
+    "billingTitle": "商品請求書",
+    "couponDiscount": "クーポン割引",
+    "duration": "プラン期間",
+    "fee": "手数料",
+    "price": "価格",
+    "productDiscount": "商品割引",
+    "total": "合計"
+  },
+  "buy": "購入",
+  "category": "カテゴリー",
+  "detail": {
+    "availableTraffic": "利用可能なトラフィック",
+    "connectedDevices": "同時接続 IP 数",
+    "connectionSpeed": "接続速度",
+    "productDetail": "商品詳細"
+  },
+  "methods": {
+    "alipay_f2f": "支付宝(対面)",
+    "balance": "残高",
+    "epay": "イージーペイ",
+    "stripe_alipay": "Stripe(支付宝)",
+    "stripe_wechat_pay": "Stripe(微信)"
+  },
+  "productDescription": "商品説明",
+  "products": "商品"
+}

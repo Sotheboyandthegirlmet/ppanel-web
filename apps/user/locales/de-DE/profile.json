@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Kontoeinstellungen",
+    "loginPassword": "Anmeldepasswort",
+    "newPassword": "Neues Passwort",
+    "passwordMismatch": "Die Passwörter stimmen nicht überein",
+    "repeatNewPassword": "Neues Passwort wiederholen",
+    "updatePassword": "Passwort aktualisieren",
+    "updateSuccess": "Erfolgreich aktualisiert"
+  },
+  "notify": {
+    "bind": "Zur Bindung gehen",
+    "emailNotification": "E-Mail-Benachrichtigung",
+    "notificationSettings": "Benachrichtigungseinstellungen",
+    "telegramId": "Telegram-ID",
+    "telegramIdPlaceholder": "Telegram-ID eingeben",
+    "telegramNotification": "Telegram-Benachrichtigung",
+    "unbind": "Lösen",
+    "updateSuccess": "Erfolgreich aktualisiert"
+  },
+  "notifyEvent": {
+    "balanceChange": "Kontostandsänderung",
+    "finance": "Finanzen",
+    "login": "Anmeldung",
+    "notificationEvents": "Benachrichtigungsereignisse",
+    "subscribe": "Abonnieren",
+    "updateSuccess": "Erfolgreich aktualisiert"
+  }
+}

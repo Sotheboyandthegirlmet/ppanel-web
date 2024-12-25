@@ -1,0 +1,15 @@
+{
+  "amount": "kwota",
+  "balance": "saldo",
+  "createdAt": "czas",
+  "title": "Saldo konta",
+  "type": {
+    "0": "Typ",
+    "1": "Doładowanie",
+    "2": "Wypłata",
+    "3": "Zakup",
+    "4": "Zwrot",
+    "5": "Nagroda",
+    "6": "Prowizja"
+  }
+}

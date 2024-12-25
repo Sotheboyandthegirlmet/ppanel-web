@@ -61,7 +61,7 @@ export default function Page() {
     }, 66);
   }, [ticket?.follow?.length]);
 
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
   return (
     <>
       <ProTable<API.Ticket, { status: number }>

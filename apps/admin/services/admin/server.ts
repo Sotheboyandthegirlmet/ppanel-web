@@ -153,3 +153,15 @@ export async function getNodeList(
     ...(options || {}),
   });
 }
+
+/** Node sort  POST /v1/admin/server/sort */
+export async function nodeSort(body: API.NodeSortRequest, options?: { [key: string]: any }) {
+  return request<API.Response & { data?: any }>('/v1/admin/server/sort', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    data: body,
+    ...(options || {}),
+  });
+}

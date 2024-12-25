@@ -1,0 +1,34 @@
+{
+  "Day": "Gün",
+  "Hour": "Saat",
+  "Minute": "Dakika",
+  "Month": "Ay",
+  "Year": "Yıl",
+  "all": "Tümü",
+  "billing": {
+    "billingTitle": "Ürün Faturası",
+    "couponDiscount": "Kupon İndirimi",
+    "duration": "Paket Süresi",
+    "fee": "İşlem Ücreti",
+    "price": "Fiyat",
+    "productDiscount": "Ürün İndirimi",
+    "total": "Toplam Fiyat"
+  },
+  "buy": "satın al",
+  "category": "kategori",
+  "detail": {
+    "availableTraffic": "Kullanılabilir Trafik",
+    "connectedDevices": "Eşzamanlı Bağlı IP Sayısı",
+    "connectionSpeed": "Bağlantı Hızı",
+    "productDetail": "Ürün Detayları"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay(Yüz Yüze)",
+    "balance": "Bakiye",
+    "epay": "Kolay Ödeme",
+    "stripe_alipay": "Stripe(Alipay)",
+    "stripe_wechat_pay": "Stripe(WeChat)"
+  },
+  "productDescription": "Ürün Açıklaması",
+  "products": "ürünler"
+}

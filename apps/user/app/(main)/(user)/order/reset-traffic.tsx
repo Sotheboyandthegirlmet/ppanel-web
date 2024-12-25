@@ -24,11 +24,11 @@ import { useEffect, useState, useTransition } from 'react';
 
 export default function ResetTraffic({
   id,
-  mark,
+  token,
   replacement,
 }: {
   id: number;
-  mark: string;
+  token: string;
   replacement?: number;
 }) {
   const t = useTranslations('order');
@@ -38,7 +38,7 @@ export default function ResetTraffic({
   const [params, setParams] = useState<API.ResetTrafficOrderRequest>({
     subscribe_id: id,
     payment: 'balance',
-    subscribe_mark: mark,
+    subscribe_token: token,
   });
   const [loading, startTransition] = useTransition();
 
@@ -51,15 +51,15 @@ export default function ResetTraffic({
   });
 
   useEffect(() => {
-    if (id && mark) {
+    if (id && token) {
       setParams((prev) => ({
         ...prev,
         quantity: 1,
         subscribe_id: id,
-        subscribe_mark: mark,
+        subscribe_token: token,
       }));
     }
-  }, [id, mark]);
+  }, [id, token]);
 
   if (!replacement) return;
 

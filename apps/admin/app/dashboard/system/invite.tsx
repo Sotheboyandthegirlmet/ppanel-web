@@ -27,7 +27,7 @@ export default function Invite() {
       await updateInviteConfig({
         ...data,
         [key]: value,
-      } as API.UpdateInviteConfigRequest);
+      } as API.InviteConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

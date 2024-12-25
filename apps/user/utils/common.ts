@@ -49,3 +49,28 @@ export function Logout() {
     location.href = `/`;
   }
 }
+
+export function getPlatform(): 'windows' | 'mac' | 'linux' | 'android' | 'ios' {
+  if (typeof navigator === 'undefined') {
+    console.log('This function can only run in a browser environment.');
+    return 'windows';
+  }
+
+  const userAgent = navigator.userAgent;
+
+  const platformPatterns: Record<string, RegExp> = {
+    windows: /Windows NT/,
+    mac: /Mac OS X/,
+    linux: /Linux/,
+    android: /Android/,
+    ios: /iPhone OS|iPad; CPU OS/,
+  };
+
+  for (const [platform, regex] of Object.entries(platformPatterns)) {
+    if (regex.test(userAgent)) {
+      return platform as 'windows' | 'mac' | 'linux' | 'android' | 'ios';
+    }
+  }
+
+  return 'windows';
+}

@@ -1,0 +1,44 @@
+{
+  "aliPay": "Pago con Alipay",
+  "alipayf2f": {
+    "appId": "ID de la aplicación de Alipay",
+    "invoiceName": "Nombre personalizado del producto",
+    "invoiceNameDescription": "Se mostrará en la factura de Alipay",
+    "privateKey": "Clave privada de Alipay",
+    "publicKey": "Clave pública de Alipay",
+    "sandbox": "Modo sandbox",
+    "sandboxDescription": "Habilitar el modo sandbox para probar el pago"
+  },
+  "enable": "Habilitar",
+  "enableDescription": "Habilitar este método de pago",
+  "epay": {
+    "key": "CLAVE",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Modo de cobro",
+  "feeModeDescription": "Modo de cobro de tarifas adicionales",
+  "feeModeItems": ["Sin tarifa", "Porcentaje", "Cantidad fija", "Ambos"],
+  "feePercent": "Porcentaje de tarifa (opcional)",
+  "feePercentDescription": "Se añade una tarifa sobre el monto del pedido",
+  "fixedFee": "Cuota fija (opcional)",
+  "fixedFeeDescription": "Agregar una tarifa fija sobre el monto del pedido",
+  "iconUrl": "URL del ícono (opcional)",
+  "iconUrlDescription": "Usado para mostrar en el frontend",
+  "inputPlaceholder": "Por favor ingrese",
+  "key": "LLAVE",
+  "notifyUrl": "Dominio de notificación personalizado (opcional)",
+  "notifyUrlDescription": "La notificación del gateway se enviará a este dominio",
+  "payForRecommendations": "Pagar por recomendaciones",
+  "pid": "PID",
+  "saveSuccess": "Guardado exitoso",
+  "showName": "Mostrar nombre",
+  "showNameDescription": "Usado para mostrar en el frontend",
+  "stripe": {
+    "publicKey": "CLAVE PÚBLICA",
+    "secretKey": "CLAVE SECRETA",
+    "webhookSecret": "FIRMA DE SECRETO DE WEBHOOK"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat Pay"
+}

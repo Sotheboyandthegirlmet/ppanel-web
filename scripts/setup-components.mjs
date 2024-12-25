@@ -117,9 +117,17 @@ function runCommand(command, args, options) {
 async function installComponents() {
   try {
     console.log('Installing all default Shadcn components in directory:', targetDir);
+    const registry = await fetch('https://ui.aceternity.com/registry');
+    const registryJson = await registry.json();
+    const components = registryJson
+      .filter(
+        (item) =>
+          !['card-spotlight', 'canvas-reveal-effect', 'sparkles', 'cover'].includes(item.name),
+      )
+      .map((item) => `https://ui.aceternity.com/registry/${item.name}.json`);
 
     // Install AceternityUI a Shadcn components
-    await runCommand('npx', ['aceternity-ui@latest', 'add', '-y', '-o', '-a'], {
+    await runCommand('npx', ['shadcn@latest', 'add', ...components], {
       cwd: targetDir,
       shell: true,
     });

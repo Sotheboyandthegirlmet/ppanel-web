@@ -1,11 +1,15 @@
 {
+  "Day": "天",
+  "Hour": "时",
+  "Minute": "分",
+  "Month": "月",
+  "Year": "年",
   "all": "全部",
   "billing": {
     "billingTitle": "商品账单",
     "couponDiscount": "折扣码优惠",
     "duration": "套餐时长",
     "fee": "手续费",
-    "months": "个月",
     "price": "价格",
     "productDiscount": "商品折扣",
     "total": "总价"
@@ -25,7 +29,6 @@
     "stripe_alipay": "Stripe(支付宝)",
     "stripe_wechat_pay": "Stripe(微信)"
   },
-  "perMonth": "月",
   "productDescription": "商品描述",
   "products": "商品"
 }

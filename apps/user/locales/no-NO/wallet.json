@@ -1,0 +1,15 @@
+{
+  "amount": "Beløp",
+  "balance": "Balanse",
+  "createdAt": "Tid",
+  "title": "Kontosaldo",
+  "type": {
+    "0": "Type",
+    "1": "Innskudd",
+    "2": "Uttak",
+    "3": "Kjøp",
+    "4": "Refusjon",
+    "5": "Belønning",
+    "6": "Kommisjon"
+  }
+}

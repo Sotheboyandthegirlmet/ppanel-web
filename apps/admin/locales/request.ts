@@ -24,6 +24,7 @@ export default getRequestConfig(async () => {
     announcement: (await import(`./${locale}/announcement.json`)).default,
     ticket: (await import(`./${locale}/ticket.json`)).default,
     document: (await import(`./${locale}/document.json`)).default,
+    tool: (await import(`./${locale}/tool.json`)).default,
     index: (await import(`./${locale}/index.json`)).default,
   };
 

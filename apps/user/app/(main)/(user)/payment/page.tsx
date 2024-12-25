@@ -42,7 +42,7 @@ export default function Page() {
   });
 
   const { data: payment } = useQuery({
-    enabled: !!order_no,
+    enabled: !!order_no && data?.status === 1,
     queryKey: ['checkoutOrder', order_no],
     queryFn: async () => {
       const { data } = await checkoutOrder({ orderNo: order_no! });
@@ -94,7 +94,7 @@ export default function Page() {
           <dl className='grid gap-3'>
             <div className='flex items-center justify-between'>
               <dt className='text-muted-foreground'>
-                <Badge>{t(`methods.${data?.method}`)}</Badge>
+                {data?.method && <Badge>{t(`methods.${data?.method}`)}</Badge>}
               </dt>
             </div>
           </dl>
@@ -202,8 +202,8 @@ export default function Page() {
                 size={208}
                 imageSettings={{
                   src: `/payment/alipay_f2f.svg`,
-                  width: 48,
-                  height: 48,
+                  width: 24,
+                  height: 24,
                   excavate: true,
                 }}
               />

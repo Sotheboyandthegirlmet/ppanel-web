@@ -25,8 +25,8 @@ export default function Purchase({
   subscribe,
   setSubscribe,
 }: {
-  subscribe?: API.SubscribeDetails;
-  setSubscribe: (subscribe?: API.SubscribeDetails) => void;
+  subscribe?: API.Subscribe;
+  setSubscribe: (subscribe?: API.Subscribe) => void;
 }) {
   const t = useTranslations('order');
 
@@ -112,27 +112,29 @@ export default function Purchase({
                 }}
                 className='flex flex-wrap gap-0.5 *:w-20 md:gap-2'
               >
-                <div className='relative'>
-                  <RadioGroupItem value='1' id='1' className='peer sr-only' />
-                  <Label
-                    htmlFor='1'
-                    className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
-                  >
-                    1 {t('month')}
-                  </Label>
-                </div>
-                {subscribe?.discount.map((item) => (
-                  <div key={item.months}>
+                {subscribe?.unit_time !== 'Minute' && (
+                  <div className='relative'>
+                    <RadioGroupItem value='1' id='1' className='peer sr-only' />
+                    <Label
+                      htmlFor='1'
+                      className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
+                    >
+                      1 / {t(subscribe?.unit_time || 'Month')}
+                    </Label>
+                  </div>
+                )}
+                {subscribe?.discount?.map((item) => (
+                  <div key={item.quantity}>
                     <RadioGroupItem
-                      value={String(item.months)}
-                      id={String(item.months)}
+                      value={String(item.quantity)}
+                      id={String(item.quantity)}
                       className='peer sr-only'
                     />
                     <Label
-                      htmlFor={String(item.months)}
+                      htmlFor={String(item.quantity)}
                       className='border-muted bg-popover hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary relative flex h-full flex-col items-center justify-center gap-2 rounded-md border-2 p-2'
                     >
-                      {item.months} {t('months')}
+                      {item.quantity} / {t(subscribe?.unit_time || 'Month')}
                       {item.discount < 100 && (
                         <Badge variant='destructive'>-{100 - item.discount}%</Badge>
                       )}

@@ -7,7 +7,6 @@ import { useForm } from '@shadcn/ui/lib/react-hook-form';
 import { z, zodResolver } from '@shadcn/ui/lib/zod';
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction } from 'react';
-
 import CloudFlareTurnstile from './turnstile';
 
 export default function UserLoginForm({
@@ -30,7 +29,8 @@ export default function UserLoginForm({
   const formSchema = z.object({
     email: z.string(),
     password: z.string(),
-    cf_token: verify.enable_login_verify ? z.string() : z.string().optional(),
+    cf_token:
+      verify.enable_login_verify && verify.turnstile_site_key ? z.string() : z.string().optional(),
   });
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

@@ -1,19 +1,13 @@
 import { NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SITE_URL } from '@/config/constants';
 import { queryUserInfo } from '@/services/user/user';
 import { extractDomain } from '@repo/ui/utils';
-import Base64 from 'crypto-js/enc-base64';
-import UTF8 from 'crypto-js/enc-utf8';
 import { create } from 'zustand';
 
-interface ICommon extends API.GetGlobalConfigResponse {
-  background: string;
-}
-
 export interface GlobalStore {
-  common: ICommon;
-  user?: API.UserInfo;
-  setCommon: (common: Partial<ICommon>) => void;
-  setUser: (user?: API.UserInfo) => void;
+  common: API.GetGlobalConfigResponse;
+  user?: API.User;
+  setCommon: (common: Partial<API.GetGlobalConfigResponse>) => void;
+  setUser: (user?: API.User) => void;
   getUserInfo: () => Promise<void>;
   getUserSubscribe: (uuid: string, type?: string) => string[];
   getAppSubLink: (type: string, url: string) => string;
@@ -39,13 +33,20 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       enable_email_verify: false,
       enable_email_domain_suffix: false,
       email_domain_suffix_list: '',
+      enable_trial: false,
+      enable_ip_register_limit: false,
+      ip_register_limit: 0,
+      ip_register_limit_duration: 0,
     },
     invite: {
       forced_invite: false,
+      referral_percentage: 0,
+      only_first_purchase: false,
     },
     currency: {
       currency_unit: 'USD',
       currency_symbol: '$',
+      access_key: '',
     },
     subscribe: {
       single_model: false,
@@ -75,29 +76,27 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
     const { pan_domain, subscribe_domain, subscribe_path } = get().common.subscribe || {};
     const domains = subscribe_domain
       ? subscribe_domain.split('\n')
-      : [extractDomain(NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL || '')];
+      : [extractDomain(NEXT_PUBLIC_API_URL || NEXT_PUBLIC_SITE_URL || '', pan_domain)];
 
     return domains.map((domain) => {
-      const enc_type = type ? Base64.stringify(UTF8.parse(type)) : '';
-      const enc_uuid = Base64.stringify(UTF8.parse(uuid));
       if (pan_domain) {
-        if (enc_type) return `https://${enc_type}.${enc_uuid}.${domain}`;
-        return `https://${enc_uuid}.${domain}`;
+        if (type) return `https://${uuid}.${type}.${domain}`;
+        return `https://${uuid}.${domain}`;
       } else {
-        if (enc_type) return `https://${domain}${subscribe_path}?mark=${enc_uuid}&type=${enc_type}`;
-        return `https://${domain}${subscribe_path}?mark=${enc_uuid}`;
+        if (type) return `https://${domain}${subscribe_path}?token=${uuid}&type=${type}`;
+        return `https://${domain}${subscribe_path}?token=${uuid}`;
       }
     });
   },
   getAppSubLink: (type: string, url: string) => {
     const name = get().common.site.site_name || '';
     switch (type) {
-      // case 'Clash':
-      //   return `clash://install-config?url=${url}&name=${name}`;
+      case 'Clash':
+        return `clash://install-config?url=${url}&name=${name}`;
       case 'Hiddify':
         return `hiddify://import/${url}#${name}`;
       case 'Loon':
-        return `loon://import?sub=${encodeURI(url)}${name}`;
+        return `loon://import?sub=${encodeURI(url)}`;
       case 'NekoBox':
         return `sn://subscription?url=${url}&name=${name}`;
       case 'NekoRay':
@@ -105,7 +104,11 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       // case 'Netch':
       //   return ``;
       case 'Quantumult X':
-        return `quantumult-x://add-resource?remote-resource=${url}`;
+        return `quantumult-x://add-resource?remote-resource=${encodeURIComponent(
+          JSON.stringify({
+            server_remote: [`${url}, tag=${name}`],
+          }),
+        )}`;
       case 'Shadowrocket':
         return `shadowrocket://add/sub://${window.btoa(url)}?remark=${encodeURI(name)}`;
       case 'Singbox':
@@ -121,7 +124,7 @@ export const useGlobalStore = create<GlobalStore>((set, get) => ({
       case 'V2rayNg':
         return `v2rayng://install-sub?url=${encodeURI(url)}&name=${name}`;
       default:
-        return `clash://install-config?url=${encodeURI(url)}&name=${name}`;
+        return '';
     }
   },
 }));

@@ -1,18 +1,22 @@
 'use client';
+
 import { Display } from '@/components/display';
 import useGlobalStore from '@/config/use-global';
 import { Icon } from '@iconify/react';
+import { isBrowser } from '@repo/ui/utils';
 import { Button } from '@shadcn/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { toast } from '@shadcn/ui/lib/sonner';
 import { Sidebar, SidebarContent } from '@shadcn/ui/sidebar';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@shadcn/ui/tooltip';
 import { useTranslations } from 'next-intl';
+import CopyToClipboard from 'react-copy-to-clipboard';
 import Recharge from './order/recharge';
 
 export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { user } = useGlobalStore();
   const t = useTranslations('layout');
+
   return (
     <Sidebar collapsible='none' side='right' {...props}>
       <SidebarContent>
@@ -31,18 +35,18 @@ export function SidebarRight({ ...props }: React.ComponentProps<typeof Sidebar>)
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button
-                    variant='ghost'
-                    className='size-5 p-0'
-                    onClick={() => {
-                      navigator.clipboard.writeText(
-                        `${location.origin}/auth?invite=${user?.refer_code}`,
-                      );
-                      toast.success(t('copySuccess'));
+                  <CopyToClipboard
+                    text={`${isBrowser() && location?.origin}/auth?invite=${user?.refer_code}`}
+                    onCopy={(text, result) => {
+                      if (result) {
+                        toast.success(t('copySuccess'));
+                      }
                     }}
                   >
-                    <Icon icon='mdi:content-copy' className='text-primary text-2xl' />
-                  </Button>
+                    <Button variant='ghost' className='size-5 p-0'>
+                      <Icon icon='mdi:content-copy' className='text-primary text-2xl' />
+                    </Button>
+                  </CopyToClipboard>
                 </TooltipTrigger>
                 <TooltipContent>{t('copyInviteLink')}</TooltipContent>
               </Tooltip>

@@ -1,5 +1,6 @@
 'use client';
 
+import { Empty } from '@/components/empty';
 import { ProList, ProListActions } from '@/components/pro-list';
 import {
   createUserTicket,
@@ -51,7 +52,7 @@ export default function Page() {
     queryKey: ['getUserTicketDetails', ticketId],
     queryFn: async () => {
       const { data } = await getUserTicketDetails({ id: ticketId });
-      return data.data as API.UserTicket;
+      return data.data as API.Ticket;
     },
     enabled: !!ticketId,
     refetchInterval: 5000,
@@ -69,12 +70,12 @@ export default function Page() {
     }, 66);
   }, [ticket?.follow?.length]);
 
-  const ref = useRef<ProListActions>();
+  const ref = useRef<ProListActions>(null);
   const [create, setCreate] = useState<Partial<API.CreateUserTicketRequest & { open: boolean }>>();
 
   return (
     <>
-      <ProList<API.UserTicket, { status: number }>
+      <ProList<API.Ticket, { status: number }>
         action={ref}
         header={{
           title: t('ticketList'),
@@ -217,6 +218,7 @@ export default function Page() {
             </Card>
           );
         }}
+        empty={<Empty />}
       />
       <Drawer
         open={!!ticketId}

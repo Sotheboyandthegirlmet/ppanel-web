@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Paramètres du compte",
+    "loginPassword": "Mot de passe de connexion",
+    "newPassword": "Nouveau mot de passe",
+    "passwordMismatch": "Les deux mots de passe ne correspondent pas",
+    "repeatNewPassword": "Répéter le nouveau mot de passe",
+    "updatePassword": "Mettre à jour le mot de passe",
+    "updateSuccess": "Mise à jour réussie"
+  },
+  "notify": {
+    "bind": "Aller à la liaison",
+    "emailNotification": "Notification par e-mail",
+    "notificationSettings": "Paramètres de notification",
+    "telegramId": "ID Telegram",
+    "telegramIdPlaceholder": "Entrez l'ID Telegram",
+    "telegramNotification": "Notification Telegram",
+    "unbind": "Délier",
+    "updateSuccess": "Mise à jour réussie"
+  },
+  "notifyEvent": {
+    "balanceChange": "Changement de solde",
+    "finance": "Finance",
+    "login": "Connexion",
+    "notificationEvents": "Événements de notification",
+    "subscribe": "S'abonner",
+    "updateSuccess": "Mise à jour réussie"
+  }
+}

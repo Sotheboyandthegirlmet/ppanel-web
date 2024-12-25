@@ -1,0 +1,11 @@
+{
+  "commissionInfo": "Montant total, la commission d'invitation est automatiquement transférée dans le solde",
+  "commissionRate": "Taux de commission",
+  "copyInviteLink": "Copier le lien d'invitation",
+  "copySuccess": "Copie réussie",
+  "inviteCode": "code d'invitation",
+  "inviteRecords": "Historique des invitations",
+  "registrationTime": "Heure d'inscription",
+  "totalCommission": "Commission totale",
+  "userEmail": "Adresse e-mail de l'utilisateur"
+}

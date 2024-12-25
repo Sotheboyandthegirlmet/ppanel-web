@@ -1,6 +1,4 @@
 // @ts-nocheck
-// Core component that receives mouse positions and renders pointer and content
-
 import React, { useEffect, useState } from 'react';
 
 import { AnimatePresence, motion, useMotionValue } from 'framer-motion';

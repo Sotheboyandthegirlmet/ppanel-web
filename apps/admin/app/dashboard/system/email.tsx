@@ -31,7 +31,7 @@ export default function Email() {
       await updateEmailSmtpConfig({
         ...data,
         [key]: value,
-      } as API.UpdateEmailSmtpConfigRequest);
+      } as API.EmailSmtpConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

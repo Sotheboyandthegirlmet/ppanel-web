@@ -1,0 +1,44 @@
+{
+  "aliPay": "Alipay ile ödeme",
+  "alipayf2f": {
+    "appId": "Alipay Uygulama Kimliği",
+    "invoiceName": "Özel Ürün Adı",
+    "invoiceNameDescription": "Alipay faturasına gösterilecektir",
+    "privateKey": "Alipay Özel Anahtarı",
+    "publicKey": "Alipay Genel Anahtarı",
+    "sandbox": "Sandbox Modu",
+    "sandboxDescription": "Ödemeyi test etmek için sandbox modunu etkinleştirin"
+  },
+  "enable": "Etkinleştir",
+  "enableDescription": "Bu ödeme yöntemini etkinleştir",
+  "epay": {
+    "key": "ANAHTAR",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Ücretlendirme Modu",
+  "feeModeDescription": "Ekstra ücretin tahsilat yöntemi",
+  "feeModeItems": ["Ücretsiz", "Yüzde", "Sabit Tutar", "Her İkisi"],
+  "feePercent": "Yüzde Ücreti (isteğe bağlı)",
+  "feePercentDescription": "Sipariş tutarının üzerine eklenen ücret",
+  "fixedFee": "Sabit Ücret (isteğe bağlı)",
+  "fixedFeeDescription": "Sipariş tutarına ek olarak sabit ücret eklenir",
+  "iconUrl": "Simge URL'si (isteğe bağlı)",
+  "iconUrlDescription": "Ön uçta görüntüleme için kullanılır",
+  "inputPlaceholder": "Lütfen girin",
+  "key": "ANAHTAR",
+  "notifyUrl": "Özel bildirim alanı (isteğe bağlı)",
+  "notifyUrlDescription": "Ağ geçidi bildirimi bu alana gönderilecektir",
+  "payForRecommendations": "Öneriler için ödeme yap",
+  "pid": "PID",
+  "saveSuccess": "Başarıyla kaydedildi",
+  "showName": "Görünen Ad",
+  "showNameDescription": "Ön uçta görüntüleme için kullanılır",
+  "stripe": {
+    "publicKey": "GENEL ANAHTAR",
+    "secretKey": "GİZLİ ANAHTAR",
+    "webhookSecret": "WEBHOOK GİZLİ İMZA"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat Pay"
+}

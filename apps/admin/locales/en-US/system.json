@@ -106,7 +106,7 @@
     "subscriptionDomainDescription": "Used for subscription; leave blank to use site domain",
     "subscriptionDomainPlaceholder": "Enter subscription domain, one per line",
     "subscriptionPath": "Subscription Path",
-    "subscriptionPathDescription": "Used for subscription",
+    "subscriptionPathDescription": "Used for subscription; be sure to restart the system after modification for optimal performance",
     "subscriptionPathPlaceholder": "Enter",
     "subscriptionProtocol": "Subscription Protocol",
     "wildcardResolution": "Wildcard Resolution",
@@ -133,7 +133,10 @@
     "groupURLDescription": "If filled, will be displayed to users or used in required locations",
     "inputPlaceholderBotToken": "0000000000:xxxxxxxxx_xxxxxxxxxxxxxxx",
     "inputPlaceholderGroupURL": "https://t.me/xxxxxx",
-    "saveSuccess": "Save Successful"
+    "inputPlaceholderWebhookDomain": "https://example.com",
+    "saveSuccess": "Save Successful",
+    "webhookDomain": "Webhook Domain",
+    "webhookDomainDescription": "Enter the domain name of the webhook server"
   },
   "tos": {
     "saveSuccess": "Save Successful",

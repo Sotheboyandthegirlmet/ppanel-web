@@ -1,0 +1,34 @@
+{
+  "Day": "Päivä",
+  "Hour": "Tunti",
+  "Minute": "Minuutti",
+  "Month": "Kuukausi",
+  "Year": "Vuosi",
+  "all": "kaikki",
+  "billing": {
+    "billingTitle": "Tuotelasku",
+    "couponDiscount": "Alennuskoodin alennus",
+    "duration": "Paketin kesto",
+    "fee": "Käsittelymaksu",
+    "price": "Hinta",
+    "productDiscount": "Tuotealennus",
+    "total": "Kokonaishinta"
+  },
+  "buy": "Osta",
+  "category": "Kategoria",
+  "detail": {
+    "availableTraffic": "Käytettävissä oleva liikenne",
+    "connectedDevices": "Samanaikaisesti yhdistetyt IP-osoitteet",
+    "connectionSpeed": "Yhteysnopeus",
+    "productDetail": "Tuotteen tiedot"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (kasvokkain)",
+    "balance": "Saldo",
+    "epay": "Helppo maksaminen",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "productDescription": "Tuotteen kuvaus",
+  "products": "tuotteet"
+}

@@ -1,0 +1,44 @@
+{
+  "aliPay": "Platba Alipay",
+  "alipayf2f": {
+    "appId": "ID aplikace Alipay",
+    "invoiceName": "Název vlastního produktu",
+    "invoiceNameDescription": "Bude zobrazeno na faktuře Alipay",
+    "privateKey": "Soukromý klíč Alipay",
+    "publicKey": "Veřejný klíč Alipay",
+    "sandbox": "Režim sandbox",
+    "sandboxDescription": "Povolte režim sandbox pro testování plateb"
+  },
+  "enable": "Povolit",
+  "enableDescription": "Povolit tento způsob platby",
+  "epay": {
+    "key": "KLÍČ",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Způsob účtování",
+  "feeModeDescription": "Způsob účtování dodatečných poplatků",
+  "feeModeItems": ["Bez poplatku", "Procento", "Pevná částka", "Obojí výše uvedené"],
+  "feePercent": "Procentuální poplatek (volitelně)",
+  "feePercentDescription": "Přidání poplatku k částce objednávky",
+  "fixedFee": "Pevný poplatek (volitelný)",
+  "fixedFeeDescription": "Přidání pevného poplatku k částce objednávky",
+  "iconUrl": "URL ikony (volitelné)",
+  "iconUrlDescription": "Používá se pro zobrazení na frontendu",
+  "inputPlaceholder": "Prosím zadejte",
+  "key": "KLÍČ",
+  "notifyUrl": "Vlastní oznámení URL (volitelné)",
+  "notifyUrlDescription": "Oznámení brány budou odeslána na tuto doménu",
+  "payForRecommendations": "Zaplatit za doporučení",
+  "pid": "PID",
+  "saveSuccess": "Uložení bylo úspěšné",
+  "showName": "Zobrazit název",
+  "showNameDescription": "Používá se pro zobrazení na frontendu",
+  "stripe": {
+    "publicKey": "VEŘEJNÝ KLÍČ",
+    "secretKey": "TAJNÝ KLÍČ",
+    "webhookSecret": "PODPIS WEBHOOK KLÍČE"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat Pay"
+}

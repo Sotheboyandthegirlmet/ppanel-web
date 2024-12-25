@@ -1,0 +1,44 @@
+{
+  "aliPay": "Betaling med Alipay",
+  "alipayf2f": {
+    "appId": "Alipay-applikasjons-ID",
+    "invoiceName": "Tilpasset produktnavn",
+    "invoiceNameDescription": "Vil vises på Alipay-fakturaen",
+    "privateKey": "Alipay privat nøkkel",
+    "publicKey": "Alipay offentlig nøkkel",
+    "sandbox": "Sandkassemodus",
+    "sandboxDescription": "Aktiver sandkassemodus for å teste betaling"
+  },
+  "enable": "Aktiver",
+  "enableDescription": "Aktiver denne betalingsmetoden",
+  "epay": {
+    "key": "NØKKEL",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Avgiftsmåte",
+  "feeModeDescription": "Gebyrmodus for ekstra avgifter",
+  "feeModeItems": ["Ingen gebyr", "Prosentandel", "Fast beløp", "Begge ovennevnte"],
+  "feePercent": "Prosentavgift (valgfritt)",
+  "feePercentDescription": "Legg til et gebyr på toppen av ordrebeløpet",
+  "fixedFee": "Fast gebyr (valgfritt)",
+  "fixedFeeDescription": "Legg til et fast gebyr i tillegg til ordrebeløpet",
+  "iconUrl": "Ikon URL (valgfritt)",
+  "iconUrlDescription": "Brukes for visning på frontend",
+  "inputPlaceholder": "Vennligst skriv inn",
+  "key": "NØKKEL",
+  "notifyUrl": "Tilpasset varslingsdomene (valgfritt)",
+  "notifyUrlDescription": "Gateway-varsler vil bli sendt til dette domenet",
+  "payForRecommendations": "Betal for anbefalinger",
+  "pid": "PID",
+  "saveSuccess": "Lagring vellykket",
+  "showName": "Vis navn",
+  "showNameDescription": "Brukes for visning på frontend",
+  "stripe": {
+    "publicKey": "OFFENTLIG NØKKEL",
+    "secretKey": "HEMMELIG NØKKEL",
+    "webhookSecret": "WEBHOOK SIGNATUR"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat-betaling"
+}

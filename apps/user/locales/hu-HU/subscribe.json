@@ -1,0 +1,34 @@
+{
+  "Day": "Nap",
+  "Hour": "Óra",
+  "Minute": "Perc",
+  "Month": "Hónap",
+  "Year": "Év",
+  "all": "Összes",
+  "billing": {
+    "billingTitle": "Termékszámla",
+    "couponDiscount": "Kuponkedvezmény",
+    "duration": "Csomag időtartama",
+    "fee": "Kezelési díj",
+    "price": "Ár",
+    "productDiscount": "Termékkedvezmény",
+    "total": "Teljes ár"
+  },
+  "buy": "vásárlás",
+  "category": "kategória",
+  "detail": {
+    "availableTraffic": "Elérhető forgalom",
+    "connectedDevices": "Egyidejűleg csatlakoztatott IP-k száma",
+    "connectionSpeed": "Kapcsolati sebesség",
+    "productDetail": "Termék részletei"
+  },
+  "methods": {
+    "alipay_f2f": "Alipay (szemtől szemben)",
+    "balance": "Egyenleg",
+    "epay": "Epay",
+    "stripe_alipay": "Stripe (Alipay)",
+    "stripe_wechat_pay": "Stripe (WeChat)"
+  },
+  "productDescription": "Termékleírás",
+  "products": "termékek"
+}

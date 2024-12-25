@@ -1,5 +1,6 @@
 'use client';
 import { Display } from '@/components/display';
+import { Empty } from '@/components/empty';
 import { ProList } from '@/components/pro-list';
 import useGlobalStore from '@/config/use-global';
 import { queryUserAffiliate } from '@/services/user/user';
@@ -7,12 +8,14 @@ import { formatDate } from '@repo/ui/utils';
 import { Button } from '@shadcn/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@shadcn/ui/card';
 import { toast } from '@shadcn/ui/lib/sonner';
+import { Copy } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default function Page() {
   const t = useTranslations('affiliate');
-  const { user } = useGlobalStore();
+  const { user, common } = useGlobalStore();
   const [sum, setSum] = useState<number>();
 
   return (
@@ -22,23 +25,41 @@ export default function Page() {
           <CardTitle>{t('totalCommission')}</CardTitle>
           <CardDescription>{t('commissionInfo')}</CardDescription>
         </CardHeader>
-        <CardContent className='text-2xl font-bold'>
-          <Display type='currency' value={sum} />
+        <CardContent>
+          <div className='flex items-baseline gap-2'>
+            <span className='text-3xl font-bold'>
+              <Display type='currency' value={sum} />
+            </span>
+            <span className='text-muted-foreground text-sm'>
+              ({t('commissionRate')}: {common?.invite?.referral_percentage}%)
+            </span>
+          </div>
         </CardContent>
       </Card>
       <Card>
         <CardHeader className='flex flex-row items-center justify-between space-y-0'>
-          <CardTitle>{t('inviteCode')}</CardTitle>
-          <Button
-            onClick={() => {
-              navigator.clipboard.writeText(`${location.origin}/auth?invite=${user?.refer_code}`);
-              toast.success(t('copySuccess'));
-            }}
-          >
-            {t('copyInviteLink')}
-          </Button>
+          <CardTitle className='text-lg font-medium'>{t('inviteCode')}</CardTitle>
         </CardHeader>
-        <CardContent className='text-2xl font-bold'>{user?.refer_code}</CardContent>
+        <CardContent>
+          <div className='flex items-center justify-between'>
+            <code className='bg-muted rounded px-2 py-1 text-2xl font-bold'>
+              {user?.refer_code}
+            </code>
+            <CopyToClipboard
+              text={`${location.origin}/auth?invite=${user?.refer_code}`}
+              onCopy={(text, result) => {
+                if (result) {
+                  toast.success(t('copySuccess'));
+                }
+              }}
+            >
+              <Button variant='secondary' size='sm' className='gap-2'>
+                <Copy className='h-4 w-4' />
+                {t('copyInviteLink')}
+              </Button>
+            </CopyToClipboard>
+          </div>
+        </CardContent>
       </Card>
       <ProList<API.UserAffiliate, Record<string, unknown>>
         request={async (pagination, filter) => {
@@ -70,6 +91,7 @@ export default function Page() {
             </Card>
           );
         }}
+        empty={<Empty />}
       />
     </div>
   );

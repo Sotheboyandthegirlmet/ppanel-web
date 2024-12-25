@@ -1,9 +1,19 @@
 declare namespace API {
+  type AlipayF2FConfig = {
+    app_id: string;
+    private_key: string;
+    public_key: string;
+    invoice_name: string;
+    sandbox: boolean;
+  };
+
   type Announcement = {
     id: number;
     title: string;
     content: string;
-    enable: boolean;
+    show: boolean;
+    pinned: boolean;
+    popup: boolean;
     created_at: number;
     updated_at: number;
   };
@@ -15,6 +25,14 @@ declare namespace API {
     subscribe_type: string;
     icon: string;
     url: string;
+  };
+
+  type ApplicationResponse = {
+    windows: Application[];
+    mac: Application[];
+    linux: Application[];
+    android: Application[];
+    ios: Application[];
   };
 
   type BatchDeleteCouponRequest = {
@@ -104,15 +122,16 @@ declare namespace API {
   type CreateNodeRequest = {
     name: string;
     server_addr: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
     speed_limit: number;
     traffic_ratio: number;
-    groupId: number;
+    group_id: number;
     protocol: string;
+    config: Record<string, any>;
     enable: boolean;
-    vmess?: Vmess;
-    vless?: Vless;
-    trojan?: Trojan;
-    shadowsocks?: Shadowsocks;
+    sort: number;
   };
 
   type CreateOrderRequest = {
@@ -140,6 +159,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -170,6 +190,11 @@ declare namespace API {
     refer_code: string;
     balance: number;
     is_admin: boolean;
+  };
+
+  type CurrencyConfig = {
+    currency_unit: string;
+    currency_symbol: string;
   };
 
   type DeleteAnnouncementRequest = {
@@ -218,6 +243,24 @@ declare namespace API {
     updated_at: number;
   };
 
+  type EmailSmtpConfig = {
+    email_smtp_host: string;
+    email_smtp_port: number;
+    email_smtp_user: string;
+    email_smtp_pass: string;
+    email_smtp_from: string;
+    email_smtp_ssl: boolean;
+    verify_email_template: string;
+    maintenance_email_template: string;
+    expiration_email_template: string;
+  };
+
+  type EpayConfig = {
+    pid: string;
+    url: string;
+    key: string;
+  };
+
   type Follow = {
     id: number;
     ticket_id: number;
@@ -234,14 +277,18 @@ declare namespace API {
   type GetAnnouncementListParams = {
     page: number;
     size: number;
-    enable?: boolean;
+    show?: boolean;
+    pinned?: boolean;
+    popup?: boolean;
     search?: string;
   };
 
   type GetAnnouncementListRequest = {
     page: number;
     size: number;
-    enable?: boolean;
+    show?: boolean;
+    pinned?: boolean;
+    popup?: boolean;
     search?: string;
   };
 
@@ -256,14 +303,6 @@ declare namespace API {
 
   type GetAnnouncementRequest = {
     id: number;
-  };
-
-  type GetApplicationResponse = {
-    windows: Application[];
-    mac: Application[];
-    linux: Application[];
-    android: Application[];
-    ios: Application[];
   };
 
   type GetCouponListParams = {
@@ -283,12 +322,6 @@ declare namespace API {
   type GetCouponListResponse = {
     total: number;
     list: Coupon[];
-  };
-
-  type GetCurrencyConfigResponse = {
-    currency_unit: string;
-    currency_symbol: string;
-    access_key: string;
   };
 
   type GetDetailRequest = {
@@ -316,30 +349,6 @@ declare namespace API {
   type GetDocumentListResponse = {
     total: number;
     list: Document[];
-  };
-
-  type GetEmailSmtpConfigResponse = {
-    email_smtp_host: string;
-    email_smtp_port: number;
-    email_smtp_user: string;
-    email_smtp_pass: string;
-    email_smtp_from: string;
-    email_smtp_ssl: boolean;
-    verify_email_template: string;
-    maintenance_email_template: string;
-    expiration_email_template: string;
-  };
-
-  type GetInviteConfigResponse = {
-    forced_invite: boolean;
-    referral_percentage: number;
-    only_first_purchase: boolean;
-  };
-
-  type GetNodeConfigResponse = {
-    node_secret: string;
-    node_pull_interval: number;
-    node_push_interval: number;
   };
 
   type GetNodeDetailParams = {
@@ -397,31 +406,6 @@ declare namespace API {
     list: Order[];
   };
 
-  type GetRegisterConfigResponse = {
-    stop_register: boolean;
-    enable_trial: boolean;
-    enable_email_verify: boolean;
-    enable_email_domain_suffix: boolean;
-    email_domain_suffix_list: string;
-    enable_ip_register_limit: boolean;
-    ip_register_limit: number;
-    ip_register_limit_duration: number;
-  };
-
-  type GetSiteConfigResponse = {
-    host: string;
-    site_name: string;
-    site_desc: string;
-    site_logo: string;
-  };
-
-  type GetSubscribeConfigResponse = {
-    single_model: boolean;
-    subscribe_path: string;
-    subscribe_domain: string;
-    pan_domain: boolean;
-  };
-
   type GetSubscribeDetailsParams = {
     id: number;
   };
@@ -454,16 +438,6 @@ declare namespace API {
     total: number;
   };
 
-  type GetSubscribeTypeResponse = {
-    subscribe_types: string[];
-  };
-
-  type GetTelegramConfigResponse = {
-    telegram_bot_token: string;
-    telegram_group_url: string;
-    telegram_notify: boolean;
-  };
-
   type GetTicketListParams = {
     page: number;
     size: number;
@@ -493,10 +467,6 @@ declare namespace API {
     id: number;
   };
 
-  type GetTosConfigResponse = {
-    tos_content: string;
-  };
-
   type GetUserDetailParams = {
     id: number;
   };
@@ -518,12 +488,43 @@ declare namespace API {
     list: User[];
   };
 
-  type GetVerifyConfigResponse = {
-    turnstile_site_key: string;
-    turnstile_secret: string;
-    enable_login_verify: boolean;
-    enable_register_verify: boolean;
-    enable_reset_password_verify: boolean;
+  type Hysteria2 = {
+    port: number;
+    hop_ports: string;
+    hop_interval: number;
+    obfs_password: string;
+    security_config: SecurityConfig;
+  };
+
+  type InviteConfig = {
+    forced_invite: boolean;
+    referral_percentage: number;
+    only_first_purchase: boolean;
+  };
+
+  type LogResponse = {
+    list: Record<string, any>;
+  };
+
+  type NodeConfig = {
+    node_secret: string;
+    node_pull_interval: number;
+    node_push_interval: number;
+  };
+
+  type NodeSortRequest = {
+    sort: SortItem[];
+  };
+
+  type NodeStatus = {
+    online_users: OnlineUser[];
+    status: ServerStatus;
+    last_at: number;
+  };
+
+  type OnlineUser = {
+    uid: number;
+    ip: string;
   };
 
   type Order = {
@@ -546,6 +547,35 @@ declare namespace API {
     updated_at: number;
   };
 
+  type OrderDetail = {
+    id: number;
+    user_id: number;
+    order_no: string;
+    type: number;
+    quantity: number;
+    price: number;
+    amount: number;
+    discount: number;
+    coupon: string;
+    coupon_discount: number;
+    method: string;
+    fee_amount: number;
+    trade_no: string;
+    status: number;
+    subscribe_id: number;
+    subscribe: Subscribe;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type OrdersStatistics = {
+    date?: string;
+    amount_total: number;
+    new_order_amount: number;
+    renewal_order_amount: number;
+    list?: OrdersStatistics[];
+  };
+
   type PaymentConfig = {
     id: number;
     name: string;
@@ -559,9 +589,15 @@ declare namespace API {
     enable: boolean;
   };
 
-  type Push = {
-    push_at: number;
-    count: number;
+  type RegisterConfig = {
+    stop_register: boolean;
+    enable_trial: boolean;
+    enable_email_verify: boolean;
+    enable_email_domain_suffix: boolean;
+    email_domain_suffix_list: string;
+    enable_ip_register_limit: boolean;
+    ip_register_limit: number;
+    ip_register_limit_duration: number;
   };
 
   type Response = {
@@ -573,22 +609,40 @@ declare namespace API {
     data?: Record<string, any>;
   };
 
+  type RevenueStatisticsResponse = {
+    today: OrdersStatistics;
+    monthly: OrdersStatistics;
+    all: OrdersStatistics;
+  };
+
+  type SecurityConfig = {
+    sni: string;
+    allow_insecure: boolean;
+    fingerprint: string;
+    reality_server_addr: string;
+    reality_server_port: number;
+    reality_private_key: string;
+    reality_public_key: string;
+    reality_short_id: string;
+  };
+
   type Server = {
     id: number;
     name: string;
     server_addr: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
     speed_limit: number;
     traffic_ratio: number;
-    groupId: number;
+    group_id: number;
     protocol: string;
+    config: Record<string, any>;
     enable: boolean;
-    vmess?: Vmess;
-    vless?: Vless;
-    trojan?: Trojan;
-    shadowsocks?: Shadowsocks;
     created_at: number;
     updated_at: number;
-    last: Push;
+    status: NodeStatus;
+    sort: number;
   };
 
   type ServerGroup = {
@@ -599,12 +653,58 @@ declare namespace API {
     updated_at: number;
   };
 
+  type ServerStatus = {
+    cpu: number;
+    mem: number;
+    disk: number;
+    updated_at: number;
+  };
+
+  type ServerTotalDataResponse = {
+    online_user_ips: number;
+    online_servers: number;
+    offline_servers: number;
+    today_upload: number;
+    today_download: number;
+    monthly_upload: number;
+    monthly_download: number;
+    updated_at: number;
+    server_traffic_ranking_today: ServerTrafficData[];
+    server_traffic_ranking_yesterday: ServerTrafficData[];
+    user_traffic_ranking_today: UserTrafficData[];
+    user_traffic_ranking_yesterday: UserTrafficData[];
+  };
+
+  type ServerTrafficData = {
+    server_id: number;
+    name: string;
+    upload: number;
+    download: number;
+  };
+
   type Shadowsocks = {
     method: string;
     port: number;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    server_key: string;
+  };
+
+  type SiteConfig = {
+    host: string;
+    site_name: string;
+    site_desc: string;
+    site_logo: string;
+  };
+
+  type SortItem = {
+    id: number;
+    sort: number;
+  };
+
+  type StripeConfig = {
+    public_key: string;
+    secret_key: string;
+    webhook_secret: string;
+    payment: string;
   };
 
   type Subscribe = {
@@ -612,6 +712,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -624,12 +725,20 @@ declare namespace API {
     server: number[];
     show: boolean;
     sell: boolean;
+    sort: number;
     created_at: number;
     updated_at: number;
   };
 
+  type SubscribeConfig = {
+    single_model: boolean;
+    subscribe_path: string;
+    subscribe_domain: string;
+    pan_domain: boolean;
+  };
+
   type SubscribeDiscount = {
-    months: number;
+    quantity: number;
     discount: number;
   };
 
@@ -639,6 +748,21 @@ declare namespace API {
     description: string;
     created_at: number;
     updated_at: number;
+  };
+
+  type SubscribeSortRequest = {
+    sort: SortItem[];
+  };
+
+  type SubscribeType = {
+    subscribe_types: string[];
+  };
+
+  type TelegramConfig = {
+    telegram_bot_token: string;
+    telegram_group_url: string;
+    telegram_notify: boolean;
+    telegram_web_hook_domain: string;
   };
 
   type TestEmailSmtpRequest = {
@@ -656,16 +780,44 @@ declare namespace API {
     updated_at: number;
   };
 
-  type Trojan = {
-    network: string;
-    port: number;
+  type TicketWaitRelpyResponse = {
+    count: number;
+  };
+
+  type TosConfig = {
+    tos_content: string;
+  };
+
+  type TransportConfig = {
+    path: string;
     host: string;
-    sni: string;
-    allow_insecure: boolean;
-    transport: Record<string, any>;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    service_name: string;
+  };
+
+  type Trojan = {
+    port: number;
+    transport: string;
+    transport_config: TransportConfig;
+    security: string;
+    security_config: SecurityConfig;
+  };
+
+  type Tuic = {
+    port: number;
+    security_config: SecurityConfig;
+  };
+
+  type UpdateAlipayF2fRequest = {
+    id: number;
+    name: string;
+    mark: string;
+    icon?: string;
+    domain?: string;
+    config: AlipayF2FConfig;
+    fee_mode: number;
+    fee_percent?: number;
+    fee_amount?: number;
+    enable: boolean;
   };
 
   type UpdateAnnouncementEnableRequest = {
@@ -677,7 +829,9 @@ declare namespace API {
     id: number;
     title: string;
     content: string;
-    enable: boolean;
+    show: boolean;
+    pinned: boolean;
+    popup: boolean;
   };
 
   type UpdateApplicationRequest = {
@@ -703,12 +857,6 @@ declare namespace API {
     enable?: boolean;
   };
 
-  type UpdateCurrencyConfigRequest = {
-    currency_unit: string;
-    currency_symbol: string;
-    access_key: string;
-  };
-
   type UpdateDocumentRequest = {
     id: number;
     title: string;
@@ -717,26 +865,17 @@ declare namespace API {
     show: boolean;
   };
 
-  type UpdateEmailSmtpConfigRequest = {
-    email_smtp_host: string;
-    email_smtp_port: number;
-    email_smtp_user: string;
-    email_smtp_pass: string;
-    email_smtp_from: string;
-    email_smtp_ssl: boolean;
-    email_template: string;
-  };
-
-  type UpdateInviteConfigRequest = {
-    forced_invite: boolean;
-    referral_percentage: number;
-    only_first_purchase: boolean;
-  };
-
-  type UpdateNodeConfigRequest = {
-    node_secret: string;
-    node_pull_interval: number;
-    node_push_interval: number;
+  type UpdateEpayRequest = {
+    id: number;
+    name: string;
+    mark: string;
+    icon?: string;
+    domain?: string;
+    config: EpayConfig;
+    fee_mode: number;
+    fee_percent?: number;
+    fee_amount?: number;
+    enable: boolean;
   };
 
   type UpdateNodeGroupRequest = {
@@ -749,15 +888,16 @@ declare namespace API {
     id: number;
     name: string;
     server_addr: string;
+    enable_relay: boolean;
+    relay_host: string;
+    relay_port: number;
     speed_limit: number;
     traffic_ratio: number;
-    groupId: number;
+    group_id: number;
     protocol: string;
+    config: Record<string, any>;
     enable: boolean;
-    vmess?: Vmess;
-    vless?: Vless;
-    trojan?: Trojan;
-    shadowsocks?: Shadowsocks;
+    sort: number;
   };
 
   type UpdateOrderStatusRequest = {
@@ -767,29 +907,17 @@ declare namespace API {
     trade_no?: string;
   };
 
-  type UpdateRegisterConfigRequest = {
-    stop_register: boolean;
-    enable_trial: boolean;
-    enable_email_verify: boolean;
-    enable_email_domain_suffix: boolean;
-    email_domain_suffix_list: string;
-    enable_ip_register_limit: boolean;
-    ip_register_limit: number;
-    ip_register_limit_duration: number;
-  };
-
-  type UpdateSiteConfigRequest = {
-    host: string;
-    site_name: string;
-    site_desc: string;
-    site_logo: string;
-  };
-
-  type UpdateSubscribeConfigRequest = {
-    single_model: boolean;
-    subscribe_path: string;
-    subscribe_domain: string;
-    pan_domain: boolean;
+  type UpdateStripeRequest = {
+    id: number;
+    name: string;
+    mark: string;
+    icon?: string;
+    domain?: string;
+    config: StripeConfig;
+    fee_mode: number;
+    fee_percent?: number;
+    fee_amount?: number;
+    enable: boolean;
   };
 
   type UpdateSubscribeGroupRequest = {
@@ -803,6 +931,7 @@ declare namespace API {
     name: string;
     description: string;
     unit_price: number;
+    unit_time: string;
     discount: SubscribeDiscount[];
     replacement: number;
     inventory: number;
@@ -815,21 +944,12 @@ declare namespace API {
     server: number[];
     show: boolean;
     sell: boolean;
-  };
-
-  type UpdateTelegramConfigRequest = {
-    telegram_bot_token: string;
-    telegram_group_url: string;
-    telegram_notify: boolean;
+    sort: number;
   };
 
   type UpdateTicketStatusRequest = {
     id: number;
     status: number;
-  };
-
-  type UpdateTosConfigRequest = {
-    tos_content: string;
   };
 
   type UpdateUserRequest = {
@@ -850,14 +970,6 @@ declare namespace API {
     enable_login_notify: boolean;
     enable_subscribe_notify: boolean;
     enable_trade_notify: boolean;
-  };
-
-  type UpdateVerifyConfigRequest = {
-    turnstile_site_key: string;
-    turnstile_secret: string;
-    enable_login_verify: boolean;
-    enable_register_verify: boolean;
-    enable_reset_password_verify: boolean;
   };
 
   type User = {
@@ -883,28 +995,83 @@ declare namespace API {
     is_del?: boolean;
   };
 
+  type UserAffiliate = {
+    email: string;
+    avatar: string;
+    registered_at: number;
+    enable: boolean;
+  };
+
+  type UserBalanceLog = {
+    id: number;
+    user_id: number;
+    amount: number;
+    type: number;
+    order_id: number;
+    balance: number;
+    created_at: number;
+  };
+
+  type UserStatistics = {
+    date?: string;
+    register: number;
+    new_order_users: number;
+    renewal_order_users: number;
+    list?: UserStatistics[];
+  };
+
+  type UserStatisticsResponse = {
+    today: UserStatistics;
+    monthly: UserStatistics;
+    all: UserStatistics;
+  };
+
+  type UserSubscribe = {
+    id: number;
+    user_id: number;
+    order_id: number;
+    subscribe_id: number;
+    subscribe: Subscribe;
+    start_time: number;
+    expire_time: number;
+    traffic: number;
+    download: number;
+    upload: number;
+    token: string;
+    status: number;
+    created_at: number;
+    updated_at: number;
+  };
+
+  type UserTrafficData = {
+    user_id: number;
+    email: string;
+    upload: number;
+    download: number;
+  };
+
+  type VerifyConfig = {
+    turnstile_site_key: string;
+    turnstile_secret: string;
+    enable_login_verify: boolean;
+    enable_register_verify: boolean;
+    enable_reset_password_verify: boolean;
+  };
+
   type Vless = {
-    host: string;
     port: number;
-    network: string;
-    transport: Record<string, any>;
+    flow: string;
+    transport: string;
+    transport_config: TransportConfig;
     security: string;
-    security_config: Record<string, any>;
-    xtls: string;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    security_config: SecurityConfig;
   };
 
   type Vmess = {
-    host: string;
     port: number;
-    enable_tls: boolean;
-    tls_config: Record<string, any>;
-    network: string;
-    transport: Record<string, any>;
-    enable_relay: boolean;
-    relay_host: string;
-    relay_port: number;
+    transport: string;
+    transport_config: TransportConfig;
+    security: string;
+    security_config: SecurityConfig;
   };
 }

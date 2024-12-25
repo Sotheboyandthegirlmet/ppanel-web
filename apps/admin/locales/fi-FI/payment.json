@@ -1,0 +1,44 @@
+{
+  "aliPay": "Alipay-maksu",
+  "alipayf2f": {
+    "appId": "Alipay-sovelluksen ID",
+    "invoiceName": "Mukautettu tuotteen nimi",
+    "invoiceNameDescription": "Näkyy Alipay-laskussa",
+    "privateKey": "Alipay-yksityinen avain",
+    "publicKey": "Alipay-julkinen avain",
+    "sandbox": "Hiekkalaatikkotila",
+    "sandboxDescription": "Ota hiekkalaatikkotila käyttöön maksujen testaamiseksi"
+  },
+  "enable": "Ota käyttöön",
+  "enableDescription": "Ota tämä maksutapa käyttöön",
+  "epay": {
+    "key": "AVAIN",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Maksutapa",
+  "feeModeDescription": "Lisämaksun veloitustapa",
+  "feeModeItems": ["Ei käsittelymaksua", "Prosenttiosuus", "Kiinteä summa", "Molemmat yllä olevat"],
+  "feePercent": "Prosenttiosuusmaksu (valinnainen)",
+  "feePercentDescription": "Lisätään maksu tilauksen summan päälle",
+  "fixedFee": "Kiinteä maksu (valinnainen)",
+  "fixedFeeDescription": "Lisää kiinteä maksu tilauksen summan päälle",
+  "iconUrl": "Kuvakkeen URL (valinnainen)",
+  "iconUrlDescription": "Käytetään etunäytössä",
+  "inputPlaceholder": "Kirjoita tähän",
+  "key": "AVAIN",
+  "notifyUrl": "Mukautettu ilmoitusalue (valinnainen)",
+  "notifyUrlDescription": "Yhdyskäytävän ilmoitus lähetetään tähän verkkotunnukseen",
+  "payForRecommendations": "Maksa suosituksista",
+  "pid": "PID",
+  "saveSuccess": "Tallennus onnistui",
+  "showName": "Näytä nimi",
+  "showNameDescription": "Näytetään käyttöliittymässä",
+  "stripe": {
+    "publicKey": "JULKINEN AVAIN",
+    "secretKey": "SALAINEN AVAIN",
+    "webhookSecret": "WEBHOOK-SALAINEN ALLEKIRJOITUS"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat-maksu"
+}

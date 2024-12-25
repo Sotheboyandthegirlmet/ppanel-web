@@ -1,0 +1,15 @@
+{
+  "amount": "Částka",
+  "balance": "zůstatek",
+  "createdAt": "čas",
+  "title": "Zůstatek na účtu",
+  "type": {
+    "0": "Typ",
+    "1": "Dobití",
+    "2": "Výběr",
+    "3": "Koupit",
+    "4": "Vrácení peněz",
+    "5": "Odměna",
+    "6": "Provize"
+  }
+}

@@ -28,7 +28,7 @@ export default function Node() {
       await updateNodeConfig({
         ...data,
         [key]: value,
-      } as API.GetNodeConfigResponse);
+      } as API.NodeConfig);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {

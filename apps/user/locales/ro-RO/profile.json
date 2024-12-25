@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Setări cont",
+    "loginPassword": "Parolă de autentificare",
+    "newPassword": "Parolă nouă",
+    "passwordMismatch": "Parolele introduse nu se potrivesc",
+    "repeatNewPassword": "Repetă parola nouă",
+    "updatePassword": "Actualizează parola",
+    "updateSuccess": "Actualizare reușită"
+  },
+  "notify": {
+    "bind": "Mergi la Legare",
+    "emailNotification": "Notificare prin email",
+    "notificationSettings": "Setări notificări",
+    "telegramId": "ID Telegram",
+    "telegramIdPlaceholder": "Introduceți ID-ul Telegram",
+    "telegramNotification": "Notificare Telegram",
+    "unbind": "Dezleagă",
+    "updateSuccess": "Actualizare reușită"
+  },
+  "notifyEvent": {
+    "balanceChange": "Schimbare de sold",
+    "finance": "Finanțe",
+    "login": "Autentificare",
+    "notificationEvents": "Evenimente de notificare",
+    "subscribe": "Abonare",
+    "updateSuccess": "Actualizare reușită"
+  }
+}

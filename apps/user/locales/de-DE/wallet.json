@@ -1,0 +1,15 @@
+{
+  "amount": "Betrag",
+  "balance": "Kontostand",
+  "createdAt": "Zeit",
+  "title": "Kontostand",
+  "type": {
+    "0": "Typ",
+    "1": "Aufladen",
+    "2": "Abheben",
+    "3": "Kaufen",
+    "4": "Rückerstattung",
+    "5": "Belohnung",
+    "6": "Provision"
+  }
+}

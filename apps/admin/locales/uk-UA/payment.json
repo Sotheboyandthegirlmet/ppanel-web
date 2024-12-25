@@ -1,0 +1,44 @@
+{
+  "aliPay": "Оплата через Alipay",
+  "alipayf2f": {
+    "appId": "Ідентифікатор додатку Alipay",
+    "invoiceName": "Назва продукту на замовлення",
+    "invoiceNameDescription": "Буде відображено у рахунку Alipay",
+    "privateKey": "Приватний ключ Alipay",
+    "publicKey": "Публічний ключ Alipay",
+    "sandbox": "Режим пісочниці",
+    "sandboxDescription": "Увімкніть режим пісочниці для тестування платежів"
+  },
+  "enable": "Увімкнути",
+  "enableDescription": "Увімкнути цей спосіб оплати",
+  "epay": {
+    "key": "КЛЮЧ",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Спосіб оплати",
+  "feeModeDescription": "Спосіб стягнення додаткової комісії",
+  "feeModeItems": ["Без комісії", "Відсоток", "Фіксована сума", "Обидва варіанти"],
+  "feePercent": "Відсоткова комісія (необов'язково)",
+  "feePercentDescription": "Додати комісію до суми замовлення",
+  "fixedFee": "Фіксована плата (необов'язково)",
+  "fixedFeeDescription": "Додати фіксовану плату до суми замовлення",
+  "iconUrl": "URL значка (необов'язково)",
+  "iconUrlDescription": "Використовується для відображення на фронтенді",
+  "inputPlaceholder": "Введіть, будь ласка",
+  "key": "КЛЮЧ",
+  "notifyUrl": "Користувацька область сповіщень (необов'язково)",
+  "notifyUrlDescription": "Сповіщення шлюзу буде надіслано на цей домен",
+  "payForRecommendations": "Оплатити рекомендації",
+  "pid": "PID",
+  "saveSuccess": "Збережено успішно",
+  "showName": "Показати ім'я",
+  "showNameDescription": "Використовується для відображення на фронтенді",
+  "stripe": {
+    "publicKey": "ПУБЛІЧНИЙ КЛЮЧ",
+    "secretKey": "СЕКРЕТНИЙ КЛЮЧ",
+    "webhookSecret": "ПІДПИС ВЕБХУКА"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat Pay"
+}

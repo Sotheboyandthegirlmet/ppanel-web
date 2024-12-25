@@ -1,0 +1,34 @@
+{
+  "Day": "روز",
+  "Hour": "ساعت",
+  "Minute": "دقیقه",
+  "Month": "ماه",
+  "Year": "سال",
+  "all": "همه",
+  "billing": {
+    "billingTitle": "صورتحساب محصول",
+    "couponDiscount": "تخفیف کوپن",
+    "duration": "مدت",
+    "fee": "هزینه",
+    "price": "قیمت",
+    "productDiscount": "تخفیف محصول",
+    "total": "جمع کل"
+  },
+  "buy": "خرید",
+  "category": "دسته‌بندی",
+  "detail": {
+    "availableTraffic": "ترافیک موجود",
+    "connectedDevices": "دستگاه‌های متصل",
+    "connectionSpeed": "سرعت اتصال",
+    "productDetail": "جزئیات محصول"
+  },
+  "methods": {
+    "alipay_f2f": "علی‌پی (رو در رو)",
+    "balance": "موجودی",
+    "epay": "ای‌پی",
+    "stripe_alipay": "استرایپ (علی‌پی)",
+    "stripe_wechat_pay": "استرایپ (وی‌چت)"
+  },
+  "productDescription": "توضیحات محصول",
+  "products": "محصولات"
+}

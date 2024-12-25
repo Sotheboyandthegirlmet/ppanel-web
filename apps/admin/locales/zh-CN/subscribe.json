@@ -3,6 +3,8 @@
   "cancel": "取消",
   "confirm": "确认",
   "confirmDelete": "确定删除吗？",
+  "copy": "复制",
+  "copySuccess": "复制成功",
   "create": "创建",
   "createSubscribe": "新建订阅",
   "createSuccess": "创建成功",
@@ -13,6 +15,11 @@
   "edit": "编辑",
   "editSubscribe": "编辑订阅",
   "form": {
+    "Day": "天",
+    "Hour": "时",
+    "Minute": "分",
+    "Month": "月",
+    "Year": "年",
     "cancel": "取消",
     "confirm": "确认",
     "description": "描述",
@@ -29,12 +36,14 @@
     "quota": "限购数量",
     "replacement": "重置价格（每次）",
     "selectSubscribeGroup": "请选择订阅组",
+    "selectUnitTime": "请选择单位时间",
     "server": "服务",
     "serverGroup": "服务组",
     "speedLimit": "速度限制（Mbps）",
     "subscribeGroup": "订阅组",
     "traffic": "流量",
-    "unit_price": "单月价格"
+    "unitPrice": "单价",
+    "unitTime": "单位时间"
   },
   "group": {
     "actions": "操作",
@@ -66,7 +75,7 @@
   "quota": "限购/次",
   "replacement": "重置价格/次",
   "sell": "销售",
-  "show": "显示",
+  "show": "首页显示",
   "subscribe": "订阅",
   "subscribeGroup": "订阅组",
   "tabs": {

@@ -10,7 +10,6 @@ import { z, zodResolver } from '@shadcn/ui/lib/zod';
 import { useCountDown } from 'ahooks';
 import { useTranslations } from 'next-intl';
 import { Dispatch, SetStateAction, useState } from 'react';
-
 import CloudFlareTurnstile from './turnstile';
 
 export default function UserRegisterForm({
@@ -52,7 +51,10 @@ export default function UserRegisterForm({
       repeat_password: z.string(),
       code: register.enable_email_verify ? z.string() : z.string().nullish(),
       invite: invite.forced_invite ? z.string() : z.string().nullish(),
-      cf_token: verify.enable_register_verify ? z.string() : z.string().nullish(),
+      cf_token:
+        verify.enable_register_verify && verify.turnstile_site_key
+          ? z.string()
+          : z.string().nullish(),
     })
     .superRefine(({ password, repeat_password }, ctx) => {
       if (password !== repeat_password) {

@@ -1,0 +1,15 @@
+{
+  "amount": "Số tiền",
+  "balance": "Số dư",
+  "createdAt": "Thời gian",
+  "title": "Số dư tài khoản",
+  "type": {
+    "0": "Loại",
+    "1": "Nạp tiền",
+    "2": "Rút tiền",
+    "3": "Mua",
+    "4": "Hoàn tiền",
+    "5": "Thưởng",
+    "6": "Hoa hồng"
+  }
+}

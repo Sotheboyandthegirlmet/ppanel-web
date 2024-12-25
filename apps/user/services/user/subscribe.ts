@@ -4,7 +4,7 @@ import request from '@/utils/request';
 
 /** Get application config GET /v1/public/subscribe/application/config */
 export async function queryApplicationConfig(options?: { [key: string]: any }) {
-  return request<API.Response & { data?: API.QueryApplicationConfigResponse }>(
+  return request<API.Response & { data?: API.ApplicationResponse }>(
     '/v1/public/subscribe/application/config',
     {
       method: 'GET',

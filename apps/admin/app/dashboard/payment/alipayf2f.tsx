@@ -37,7 +37,7 @@ export default function AlipayF2F() {
       await updateAlipayF2FPaymentConfig({
         ...data,
         [key]: value,
-      } as API.PaymentConfig);
+      } as API.UpdateAlipayF2fRequest);
       toast.success(t('saveSuccess'));
       refetch();
     } catch (error) {
@@ -58,6 +58,23 @@ export default function AlipayF2F() {
               checked={data?.enable}
               onCheckedChange={(checked) => {
                 updateConfig('enable', checked);
+              }}
+            />
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>
+            <Label>{t('alipayf2f.sandbox')}</Label>
+            <p className='text-muted-foreground text-xs'>{t('alipayf2f.sandboxDescription')}</p>
+          </TableCell>
+          <TableCell className='text-right'>
+            <Switch
+              checked={data?.config.sandbox}
+              onCheckedChange={(checked) => {
+                updateConfig('config', {
+                  ...data?.config,
+                  sandbox: checked,
+                });
               }}
             />
           </TableCell>
@@ -190,10 +207,8 @@ export default function AlipayF2F() {
               defaultValue={data?.config.private_key}
               onBlur={(e) => {
                 updateConfig('config', {
-                  config: {
-                    ...data?.config,
-                    private_key: e.target.value,
-                  },
+                  ...data?.config,
+                  private_key: e.target.value,
                 });
               }}
             />
@@ -207,13 +222,11 @@ export default function AlipayF2F() {
           <TableCell className='text-right'>
             <Textarea
               placeholder={t('inputPlaceholder')}
-              value={data?.config.public_key}
+              defaultValue={data?.config.public_key}
               onBlur={(e) => {
                 updateConfig('config', {
-                  config: {
-                    ...data?.config,
-                    public_key: e.target.value,
-                  },
+                  ...data?.config,
+                  public_key: e.target.value,
                 });
               }}
             />

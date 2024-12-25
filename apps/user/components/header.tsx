@@ -2,14 +2,16 @@
 
 import useGlobalStore from '@/config/use-global';
 import { buttonVariants } from '@shadcn/ui/button';
+import { useTranslations } from 'next-intl';
 import Image from 'next/legacy/image';
 import Link from 'next/link';
 import LanguageSwitch from './language-switch';
-// import { MobileSidebar } from './mobile-sidebar';
 import ThemeSwitch from './theme-switch';
 import { UserNav } from './user-nav';
 
 export default function Header() {
+  const t = useTranslations('common');
+
   const { common, user } = useGlobalStore();
   const { site } = common;
   const Logo = (
@@ -37,7 +39,7 @@ export default function Header() {
                 size: 'sm',
               })}
             >
-              登录/注册
+              {t('login')}
             </Link>
           )}
         </div>

@@ -3,6 +3,8 @@
   "cancel": "Cancel",
   "confirm": "Confirm",
   "confirmDelete": "Are you sure you want to delete?",
+  "copy": "Copy",
+  "copySuccess": "Copied successfully",
   "create": "Create",
   "createSubscribe": "Create Subscription",
   "createSuccess": "Create Successful",
@@ -13,6 +15,11 @@
   "edit": "Edit",
   "editSubscribe": "Edit Subscription",
   "form": {
+    "Day": "Day",
+    "Hour": "Hour",
+    "Minute": "Minute",
+    "Month": "Month",
+    "Year": "Year",
     "cancel": "Cancel",
     "confirm": "Confirm",
     "description": "Description",
@@ -29,12 +36,14 @@
     "quota": "Purchase Limit",
     "replacement": "Reset Price (per time)",
     "selectSubscribeGroup": "Select Subscription Group",
+    "selectUnitTime": "Please select a unit of time",
     "server": "Server",
     "serverGroup": "Server Group",
     "speedLimit": "Speed Limit (Mbps)",
     "subscribeGroup": "Subscription Group",
     "traffic": "Traffic",
-    "unit_price": "Monthly Price"
+    "unitPrice": "Unit Price",
+    "unitTime": "Unit Time"
   },
   "group": {
     "actions": "Actions",
@@ -66,7 +75,7 @@
   "quota": "Purchase Limit/Time",
   "replacement": "Reset Price/Time",
   "sell": "Sell",
-  "show": "Show",
+  "show": "Home display",
   "subscribe": "Subscribe",
   "subscribeGroup": "Subscription Group",
   "tabs": {

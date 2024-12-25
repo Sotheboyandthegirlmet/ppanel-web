@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Ustawienia konta",
+    "loginPassword": "Hasło do logowania",
+    "newPassword": "Nowe hasło",
+    "passwordMismatch": "Wprowadzone hasła nie są zgodne",
+    "repeatNewPassword": "Powtórz nowe hasło",
+    "updatePassword": "Zaktualizuj hasło",
+    "updateSuccess": "Aktualizacja zakończona sukcesem"
+  },
+  "notify": {
+    "bind": "Przejdź do wiązania",
+    "emailNotification": "Powiadomienie e-mail",
+    "notificationSettings": "Ustawienia powiadomień",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "Wprowadź Telegram ID",
+    "telegramNotification": "Powiadomienie Telegram",
+    "unbind": "Odwiąż",
+    "updateSuccess": "Aktualizacja zakończona sukcesem"
+  },
+  "notifyEvent": {
+    "balanceChange": "Zmiana salda",
+    "finance": "Finanse",
+    "login": "Logowanie",
+    "notificationEvents": "Wydarzenia powiadomień",
+    "subscribe": "Subskrybuj",
+    "updateSuccess": "Aktualizacja zakończona sukcesem"
+  }
+}

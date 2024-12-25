@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "खाता सेटिंग्स",
+    "loginPassword": "लॉगिन पासवर्ड",
+    "newPassword": "नया पासवर्ड",
+    "passwordMismatch": "दोनों पासवर्ड मेल नहीं खाते",
+    "repeatNewPassword": "नया पासवर्ड दोहराएं",
+    "updatePassword": "पासवर्ड अपडेट करें",
+    "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
+  },
+  "notify": {
+    "bind": "बाइंडिंग पर जाएं",
+    "emailNotification": "ईमेल सूचना",
+    "notificationSettings": "सूचना सेटिंग्स",
+    "telegramId": "टेलीग्राम आईडी",
+    "telegramIdPlaceholder": "टेलीग्राम आईडी दर्ज करें",
+    "telegramNotification": "टेलीग्राम सूचना",
+    "unbind": "अनबाइंड करें",
+    "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
+  },
+  "notifyEvent": {
+    "balanceChange": "बैलेंस परिवर्तन",
+    "finance": "वित्त",
+    "login": "लॉगिन",
+    "notificationEvents": "सूचना घटनाएँ",
+    "subscribe": "सदस्यता लें",
+    "updateSuccess": "सफलतापूर्वक अपडेट किया गया"
+  }
+}

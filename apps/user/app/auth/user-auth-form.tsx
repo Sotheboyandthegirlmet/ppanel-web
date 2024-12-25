@@ -2,10 +2,7 @@
 
 import useGlobalStore from '@/config/use-global';
 import { checkUser, resetPassword, userLogin, userRegister } from '@/services/common/auth';
-import { Icon } from '@iconify/react';
-import { Button } from '@shadcn/ui/button';
 import { toast } from '@shadcn/ui/lib/sonner';
-import { cn } from '@shadcn/ui/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { ReactNode, useState, useTransition } from 'react';
@@ -132,9 +129,9 @@ export default function UserAuthForm() {
           {t(`${type || 'check'}.description`)}
         </div>
       </div>
-      {!((type === 'register' && register.stop_register) || type === 'reset') && (
+      {/* {!((type === 'register' && register.stop_register) || type === 'reset') && (
         <>
-          <div className='mb-3 flex flex-wrap items-center justify-center gap-3 font-bold'>
+          <div className='mb-3 grid items-center justify-center gap-3 font-bold lg:grid-cols-3'>
             <Button type='button' variant='outline'>
               <Icon icon='uil:telegram' className='mr-2 size-5' />
               Telegram
@@ -158,7 +155,7 @@ export default function UserAuthForm() {
             <span className='text-muted-foreground w-[125px] text-sm'>{t('orWithEmail')}</span>
           </div>
         </>
-      )}
+      )} */}
       {UserForm}
     </>
   );

@@ -5,7 +5,9 @@
     "invoiceName": "Custom Product Name",
     "invoiceNameDescription": "Will be displayed on Alipay bill",
     "privateKey": "Alipay Private Key",
-    "publicKey": "Alipay Public Key"
+    "publicKey": "Alipay Public Key",
+    "sandbox": "Sandbox Mode",
+    "sandboxDescription": "Enable sandbox mode to test payments"
   },
   "enable": "Enable",
   "enableDescription": "Enable this payment method",

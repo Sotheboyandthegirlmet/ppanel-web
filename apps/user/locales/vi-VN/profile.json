@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Cài đặt tài khoản",
+    "loginPassword": "Mật khẩu đăng nhập",
+    "newPassword": "Mật khẩu mới",
+    "passwordMismatch": "Hai lần nhập mật khẩu không khớp",
+    "repeatNewPassword": "Nhập lại mật khẩu mới",
+    "updatePassword": "Cập nhật mật khẩu",
+    "updateSuccess": "Cập nhật thành công"
+  },
+  "notify": {
+    "bind": "Đi đến Liên kết",
+    "emailNotification": "Thông báo Email",
+    "notificationSettings": "Cài đặt Thông báo",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "Nhập Telegram ID",
+    "telegramNotification": "Thông báo Telegram",
+    "unbind": "Hủy liên kết",
+    "updateSuccess": "Cập nhật thành công"
+  },
+  "notifyEvent": {
+    "balanceChange": "Thay đổi số dư",
+    "finance": "Tài chính",
+    "login": "Đăng nhập",
+    "notificationEvents": "Sự kiện thông báo",
+    "subscribe": "Đăng ký",
+    "updateSuccess": "Cập nhật thành công"
+  }
+}

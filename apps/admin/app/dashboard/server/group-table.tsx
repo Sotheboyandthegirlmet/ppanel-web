@@ -19,7 +19,7 @@ import GroupForm from './group-form';
 export default function GroupTable() {
   const t = useTranslations('server');
   const [loading, setLoading] = useState(false);
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.ServerGroup, any>

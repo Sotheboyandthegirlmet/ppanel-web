@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "Kontoinnstillinger",
+    "loginPassword": "Innloggingspassord",
+    "newPassword": "Nytt passord",
+    "passwordMismatch": "Passordene stemmer ikke overens",
+    "repeatNewPassword": "Gjenta nytt passord",
+    "updatePassword": "Oppdater passord",
+    "updateSuccess": "Oppdatering vellykket"
+  },
+  "notify": {
+    "bind": "Gå til binding",
+    "emailNotification": "E-postvarsling",
+    "notificationSettings": "Varslingsinnstillinger",
+    "telegramId": "Telegram-ID",
+    "telegramIdPlaceholder": "Skriv inn Telegram-ID",
+    "telegramNotification": "Telegram-varsling",
+    "unbind": "Løsne",
+    "updateSuccess": "Oppdatering vellykket"
+  },
+  "notifyEvent": {
+    "balanceChange": "Saldoendring",
+    "finance": "Finans",
+    "login": "Logg inn",
+    "notificationEvents": "Varslingshendelser",
+    "subscribe": "Abonner",
+    "updateSuccess": "Oppdatering vellykket"
+  }
+}

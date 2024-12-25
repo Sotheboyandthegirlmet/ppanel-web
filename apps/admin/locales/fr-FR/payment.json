@@ -1,0 +1,44 @@
+{
+  "aliPay": "Paiement par Alipay",
+  "alipayf2f": {
+    "appId": "ID de l'application Alipay",
+    "invoiceName": "Nom personnalisé du produit",
+    "invoiceNameDescription": "S'affichera sur la facture Alipay",
+    "privateKey": "Clé privée Alipay",
+    "publicKey": "Clé publique Alipay",
+    "sandbox": "Mode bac à sable",
+    "sandboxDescription": "Activez le mode bac à sable pour tester le paiement"
+  },
+  "enable": "Activer",
+  "enableDescription": "Activer ce mode de paiement",
+  "epay": {
+    "key": "CLÉ",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Mode de facturation",
+  "feeModeDescription": "Mode de facturation des frais supplémentaires",
+  "feeModeItems": ["Pas de frais", "Pourcentage", "Montant fixe", "Les deux ci-dessus"],
+  "feePercent": "Pourcentage de frais (optionnel)",
+  "feePercentDescription": "Ajouter des frais au montant de la commande",
+  "fixedFee": "Frais fixes (optionnel)",
+  "fixedFeeDescription": "Ajouter des frais fixes au montant de la commande",
+  "iconUrl": "URL de l'icône (facultatif)",
+  "iconUrlDescription": "Utilisé pour l'affichage frontal",
+  "inputPlaceholder": "Veuillez entrer",
+  "key": "CLÉ",
+  "notifyUrl": "Domaine de notification personnalisé (facultatif)",
+  "notifyUrlDescription": "Les notifications de la passerelle seront envoyées à ce domaine",
+  "payForRecommendations": "Payer pour les recommandations",
+  "pid": "PID",
+  "saveSuccess": "Enregistrement réussi",
+  "showName": "Afficher le nom",
+  "showNameDescription": "Utilisé pour l'affichage frontal",
+  "stripe": {
+    "publicKey": "CLÉ PUBLIQUE",
+    "secretKey": "CLÉ SECRÈTE",
+    "webhookSecret": "SIGNATURE DE CLÉ WEBHOOK"
+  },
+  "url": "URL",
+  "wechatPay": "Paiement WeChat"
+}

@@ -15,7 +15,7 @@ import UserForm from './user-form';
 export default function Page() {
   const t = useTranslations('user');
   const [loading, setLoading] = useState(false);
-  const ref = useRef<ProTableActions>();
+  const ref = useRef<ProTableActions>(null);
 
   return (
     <ProTable<API.User, any>

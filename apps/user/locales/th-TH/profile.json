@@ -1,0 +1,29 @@
+{
+  "accountSettings": {
+    "accountSettings": "การตั้งค่าบัญชี",
+    "loginPassword": "รหัสผ่านเข้าสู่ระบบ",
+    "newPassword": "รหัสผ่านใหม่",
+    "passwordMismatch": "รหัสผ่านที่ป้อนไม่ตรงกัน",
+    "repeatNewPassword": "กรอกรหัสผ่านใหม่อีกครั้ง",
+    "updatePassword": "อัปเดตรหัสผ่าน",
+    "updateSuccess": "อัปเดตสำเร็จ"
+  },
+  "notify": {
+    "bind": "ไปที่การผูก",
+    "emailNotification": "การแจ้งเตือนทางอีเมล",
+    "notificationSettings": "การตั้งค่าการแจ้งเตือน",
+    "telegramId": "Telegram ID",
+    "telegramIdPlaceholder": "กรอก Telegram ID",
+    "telegramNotification": "การแจ้งเตือนทาง Telegram",
+    "unbind": "ยกเลิกการผูก",
+    "updateSuccess": "อัปเดตสำเร็จ"
+  },
+  "notifyEvent": {
+    "balanceChange": "การเปลี่ยนแปลงยอดเงิน",
+    "finance": "การเงิน",
+    "login": "เข้าสู่ระบบ",
+    "notificationEvents": "เหตุการณ์แจ้งเตือน",
+    "subscribe": "สมัครสมาชิก",
+    "updateSuccess": "อัปเดตสำเร็จ"
+  }
+}

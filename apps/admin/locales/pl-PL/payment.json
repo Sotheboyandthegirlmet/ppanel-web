@@ -1,0 +1,44 @@
+{
+  "aliPay": "Płatność Alipay",
+  "alipayf2f": {
+    "appId": "ID aplikacji Alipay",
+    "invoiceName": "Niestandardowa nazwa produktu",
+    "invoiceNameDescription": "Będzie wyświetlana na rachunku Alipay",
+    "privateKey": "Klucz prywatny Alipay",
+    "publicKey": "Klucz publiczny Alipay",
+    "sandbox": "Tryb piaskownicy",
+    "sandboxDescription": "Włącz tryb piaskownicy, aby przetestować płatności"
+  },
+  "enable": "Włącz",
+  "enableDescription": "Włącz tę metodę płatności",
+  "epay": {
+    "key": "KLUCZ",
+    "pid": "PID",
+    "url": "URL"
+  },
+  "feeMode": "Sposób naliczania opłat",
+  "feeModeDescription": "Sposób naliczania dodatkowej opłaty",
+  "feeModeItems": ["Bez opłaty", "Procent", "Stała kwota", "Oba powyższe"],
+  "feePercent": "Procentowa opłata (opcjonalnie)",
+  "feePercentDescription": "Dodaj opłatę do kwoty zamówienia",
+  "fixedFee": "Stała opłata (opcjonalnie)",
+  "fixedFeeDescription": "Dodaj stałą opłatę do kwoty zamówienia",
+  "iconUrl": "URL ikony (opcjonalnie)",
+  "iconUrlDescription": "Używane do wyświetlania na froncie",
+  "inputPlaceholder": "Wprowadź tekst",
+  "key": "KLUCZ",
+  "notifyUrl": "Niestandardowa domena powiadomień (opcjonalnie)",
+  "notifyUrlDescription": "Powiadomienie bramki zostanie wysłane na tę domenę",
+  "payForRecommendations": "Zapłać za rekomendacje",
+  "pid": "PID",
+  "saveSuccess": "Zapisano pomyślnie",
+  "showName": "Pokaż nazwę",
+  "showNameDescription": "Używane do wyświetlania na froncie",
+  "stripe": {
+    "publicKey": "KLUCZ PUBLICZNY",
+    "secretKey": "KLUCZ TAJNY",
+    "webhookSecret": "PODPIS KLUCZA WEBHOOK"
+  },
+  "url": "URL",
+  "wechatPay": "WeChat Pay"
+}
